@@ -98,7 +98,7 @@ export function IndustriesSection() {
         viewport={viewportOnce}
         className="mt-10 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
-        {industries.map((industry, i) => {
+        {industries.map((industry) => {
           const Icon = industryIcon[industry.slug] ?? Boxes;
           // Alternate tone slightly so the row doesn't feel monotonous
           // across ten tiles, while staying inside the brand palette.

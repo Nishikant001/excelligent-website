@@ -1,0 +1,33 @@
+# Static-host redirect rules (Netlify _redirects format).
+# See docs/SEO_REDIRECTS.md for the full old->new URL map, the reasoning
+# behind each redirect, and equivalent configuration for other static
+# hosts (Vercel, Cloudflare Pages, GitHub Pages, S3 + CloudFront).
+#
+# No backend is involved in serving these — this file is read directly by
+# Netlify's edge at request time for any static deploy of this project.
+
+/overview/                                              /overview                                             301
+/our-team/                                               /our-team                                             301
+/our-partnerships/                                       /our-partnerships                                     301
+
+/grow-with-sap-s-4hana-public-cloud/                     /solutions/grow-with-sap                              301
+/rise-with-sap-s-4hana-public-cloud/                     /solutions/rise-with-sap                              301
+/sap-btp/                                                /solutions/sap-btp                                    301
+/objective-and-key-result-areas-okr/                     /solutions/okr                                        301
+/human-capital-management-hcm/                           /solutions/hcm                                        301
+/cyber-security/                                         /solutions/cyber-security                             301
+
+/sap-implementation/                                     /services/sap-implementation                          301
+/sap-ams/                                                /services/sap-ams                                     301
+/sap-system-conversion-and-upgrades/                     /services/sap-system-conversion-upgrades              301
+/grow-with-sap-s-4hana-public-cloud-2/                   /services/sap-cloud-analytics                         301
+
+/fixed-asset-tagging/                                    /products/e-fa-tagging                                301
+/e-dealer-portal/                                        /products/e-dealer-portal                             301
+/gst-compliance-reporting/                                /products/gst-compliance-reporting                    301
+
+/comming-soon/                                           /industries                                           301
+
+# Internal alias from the original Phase 1 sitemap plan, superseded by the
+# canonical /case-studies route introduced in Phase 7.
+/resources/case-studies                                  /case-studies                                         301

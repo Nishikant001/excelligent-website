@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://excelligent.co.in/</loc></url>
+
+  <url><loc>https://excelligent.co.in/overview</loc></url>
+  <url><loc>https://excelligent.co.in/our-team</loc></url>
+  <url><loc>https://excelligent.co.in/our-partnerships</loc></url>
+
+  <url><loc>https://excelligent.co.in/solutions</loc></url>
+  <url><loc>https://excelligent.co.in/solutions/grow-with-sap</loc></url>
+  <url><loc>https://excelligent.co.in/solutions/rise-with-sap</loc></url>
+  <url><loc>https://excelligent.co.in/solutions/sap-btp</loc></url>
+  <url><loc>https://excelligent.co.in/solutions/okr</loc></url>
+  <url><loc>https://excelligent.co.in/solutions/hcm</loc></url>
+  <url><loc>https://excelligent.co.in/solutions/cyber-security</loc></url>
+  <!-- /solutions/hostbooks-erp intentionally excluded: noindex stub, see docs/CONTENT_REVIEW_REQUIRED.md -->
+
+  <url><loc>https://excelligent.co.in/services</loc></url>
+  <url><loc>https://excelligent.co.in/services/sap-implementation</loc></url>
+  <url><loc>https://excelligent.co.in/services/sap-ams</loc></url>
+  <url><loc>https://excelligent.co.in/services/sap-system-conversion-upgrades</loc></url>
+  <url><loc>https://excelligent.co.in/services/sap-value-added-services</loc></url>
+  <url><loc>https://excelligent.co.in/services/sap-cloud-analytics</loc></url>
+  <!-- /services/sap-btp-development intentionally excluded: noindex duplicate of /solutions/sap-btp -->
+
+  <url><loc>https://excelligent.co.in/industries</loc></url>
+  <url><loc>https://excelligent.co.in/industries/chemical</loc></url>
+  <url><loc>https://excelligent.co.in/industries/dairy</loc></url>
+  <url><loc>https://excelligent.co.in/industries/electronics</loc></url>
+  <url><loc>https://excelligent.co.in/industries/automotive</loc></url>
+  <url><loc>https://excelligent.co.in/industries/engineering-construction</loc></url>
+  <!-- brewery, pharma, consumer-goods, logistics, distribution intentionally
+       excluded: noindex, no real content yet -->
+
+  <url><loc>https://excelligent.co.in/products</loc></url>
+  <url><loc>https://excelligent.co.in/products/e-fa-tagging</loc></url>
+  <url><loc>https://excelligent.co.in/products/e-dealer-portal</loc></url>
+  <url><loc>https://excelligent.co.in/products/e-vault</loc></url>
+  <url><loc>https://excelligent.co.in/products/e-fitn</loc></url>
+  <url><loc>https://excelligent.co.in/products/e-squot</loc></url>
+  <!-- /products/gst-compliance-reporting intentionally excluded: noindex stub -->
+
+  <url><loc>https://excelligent.co.in/case-studies</loc></url>
+  <url><loc>https://excelligent.co.in/case-studies/grow-construction-case-study</loc></url>
+  <url><loc>https://excelligent.co.in/case-studies/rise-chemical-case-study</loc></url>
+  <url><loc>https://excelligent.co.in/case-studies/btp-chemical-case-study</loc></url>
+  <url><loc>https://excelligent.co.in/case-studies/okr-partner-customer-stories</loc></url>
+  <url><loc>https://excelligent.co.in/case-studies/resecurity-aadhaar-news</loc></url>
+  <url><loc>https://excelligent.co.in/case-studies/sap-implementation-multi-company</loc></url>
+  <url><loc>https://excelligent.co.in/case-studies/sap-ams-distillery</loc></url>
+  <url><loc>https://excelligent.co.in/case-studies/system-conversion-telecom</loc></url>
+  <url><loc>https://excelligent.co.in/case-studies/cloud-analytics-automotive</loc></url>
+  <url><loc>https://excelligent.co.in/case-studies/fa-tagging-automotive</loc></url>
+  <url><loc>https://excelligent.co.in/case-studies/dealer-portal-dairy</loc></url>
+
+  <url><loc>https://excelligent.co.in/contact</loc></url>
+</urlset>
