@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Phase 14 hardening: guard against any accidental horizontal page
+       overflow (e.g. a full-bleed section or animation nudging past the
+       viewport edge on a narrow screen). Inner horizontal-scroll
+       containers (industries showcase, trust marquee) opt in explicitly
+       via overflow-x-auto and are unaffected by this. */
+    overflow-x: hidden;
+  }
+  body {
+    @apply bg-background text-text-primary font-sans antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display text-text-primary;
+  }
+  a {
+    @apply transition-colors duration-200;
+  }
+  :focus-visible {
+    outline: 2px solid theme('colors.primary.DEFAULT');
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+@layer utilities {
+  .container-content {
+    @apply mx-auto max-w-content px-5 sm:px-8 lg:px-12;
+  }
+
+  /* Generous, consistent vertical rhythm for full-width sections —
+     Phase 13's "spacious, premium" section spacing (docs/DESIGN_SYSTEM.md). */
+  .section-y {
+    @apply py-20 lg:py-28;
+  }
+  .section-y-tight {
+    @apply py-14 lg:py-20;
+  }
+
+  /* Small-caps label used before every section heading, matching the
+     Phase 13 design reference's eyebrow treatment: a short blue tick
+     mark followed by uppercase, letter-spaced text. */
+  .eyebrow {
+    @apply relative inline-flex items-center pl-4 text-xs font-semibold uppercase tracking-[0.14em] text-secondary-dark;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply absolute left-0 top-1/2 h-3.5 w-[3px] -translate-y-1/2 rounded-full bg-secondary;
+  }
+  .eyebrow-light {
+    @apply text-secondary-light;
+  }
+  .eyebrow-light::before {
+    @apply bg-secondary-light;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
