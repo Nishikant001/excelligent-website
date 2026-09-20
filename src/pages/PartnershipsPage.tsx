@@ -29,12 +29,12 @@ const detailedPartners = partners.filter((p) => relatedSolutionByPartnerId[p.id]
 // services/solutions; Cloud reflects the SAP BTP solution; Cyber Security
 // and Business Applications reflect the Resecurity and Profit.co/HostBooks
 // partnerships respectively).
-const ecosystemNodes = [
-  { label: "SAP", description: "Core ERP solutions and services" },
-  { label: "Cloud (SAP BTP)", description: "Platform, integration, and analytics" },
-  { label: "Cyber Security", description: "via our Resecurity partnership" },
-  { label: "Business Applications", description: "via our Profit.co and HostBooks partnerships" },
-];
+// const ecosystemNodes = [
+//   { label: "SAP", description: "Core ERP solutions and services" },
+//   { label: "Cloud (SAP BTP)", description: "Platform, integration, and analytics" },
+//   { label: "Cyber Security", description: "via our Resecurity partnership" },
+//   { label: "Business Applications", description: "via our Profit.co and HostBooks partnerships" },
+// ];
 
 export default function PartnershipsPage() {
   return (

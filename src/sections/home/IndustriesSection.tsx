@@ -102,12 +102,7 @@ export function IndustriesSection() {
           const Icon = industryIcon[industry.slug] ?? Boxes;
           // Alternate tone slightly so the row doesn't feel monotonous
           // across ten tiles, while staying inside the brand palette.
-          const tone =
-            i % 3 === 0
-              ? "from-primary to-brand-navy"
-              : i % 3 === 1
-                ? "from-brand-navy to-primary-dark"
-                : "from-primary-dark to-secondary-dark";
+         
 
           return (
             <motion.li

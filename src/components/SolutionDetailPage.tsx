@@ -3,7 +3,7 @@ import { DetailHero } from "@/components/DetailHero";
 import { Seo } from "@/components/Seo";
 import { FeatureGrid, FeaturedCaseStudy, CTASection } from "@/components/Sections";
 import { RelatedLinks } from "@/components/RelatedLinks";
-import { fadeUp, staggerChildren, viewportOnce } from "@/lib/animations";
+import { fadeUp,  viewportOnce } from "@/lib/animations";
 import { categoryGradient, categoryIcon } from "@/lib/contentVisuals";
 import { solutions } from "@/data/solutions";
 import { services } from "@/data/services"; 
