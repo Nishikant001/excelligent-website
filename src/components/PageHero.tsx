@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { fadeUp, staggerChildren } from "@/lib/animations";
 import { Breadcrumb, type Crumb } from "@/components/Breadcrumb";
+import { DataNetworkCanvas } from "@/components/visuals/DataNetworkCanvas";
 
 // The shared hero used at the top of every non-homepage route (Overview,
 // Team, Partnerships, Solutions/Services/Industries/Products/Case Studies
@@ -8,6 +9,10 @@ import { Breadcrumb, type Crumb } from "@/components/Breadcrumb";
 // editorial panel — replacing the previous "small blue rectangle + title"
 // treatment — so every inner page opens with real enterprise presence,
 // not just the homepage.
+//
+// Now also carries the same animated data-network canvas as the homepage
+// Hero (at low opacity, since this panel is shorter) so inner pages read as
+// one consistent design language with Home instead of a plainer variant.
 export function PageHero({
   breadcrumb,
   eyebrow,
@@ -25,6 +30,9 @@ export function PageHero({
   return (
     <section className="relative overflow-hidden bg-navy-mesh">
       <div className="absolute inset-0 bg-hero-grid bg-grid opacity-[0.12]" aria-hidden="true" />
+      <div className="absolute inset-0 opacity-[0.35]" aria-hidden="true">
+        <DataNetworkCanvas className="block h-full w-full" />
+      </div>
       <div
         className="absolute -right-24 top-0 h-72 w-72 rounded-full bg-secondary/20 blur-3xl"
         aria-hidden="true"

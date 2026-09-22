@@ -84,7 +84,8 @@ export const navItems: NavItem[] = [
         links: [
           { label: "Enterprise AI", href: ROUTES.aiAndData, description: "AI that understands your enterprise" },
           serviceLink("sap-cloud-analytics", undefined, "Analytics, planning and predictive insight"),
-          { label: "e-Vault", href: ROUTES.product("e-vault"), description: "AI-powered enterprise document management" },
+          // Same "not AI-powered yet" note as homeSections.ts's flagship product tag.
+          { label: "e-Vault", href: ROUTES.product("e-vault"), description: "Intelligent enterprise document management" },
         ],
       },
     ],

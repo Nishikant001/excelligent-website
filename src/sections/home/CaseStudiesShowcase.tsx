@@ -63,7 +63,7 @@ export function CaseStudiesShowcase() {
                 </span>
 
                 <div className="relative z-10">
-                  <h3 className="font-display text-2xl font-bold leading-tight sm:text-[1.7rem]">{card.title}</h3>
+                  <h3 className="font-display text-2xl font-bold leading-tight sm:text-[1.7rem] text-white/75">{card.title}</h3>
                   <ul className="mt-5 space-y-1.5 text-sm text-white/75">
                     {card.lines.map((line) => (
                       <li key={line} className="flex items-start gap-2.5">

@@ -6,19 +6,20 @@ import { brandsServed } from "@/data/homeContent";
 import { partners as verifiedPartners } from "@/data/partners";
 import { ROUTES } from "@/routes/paths";
 
-// Merges the former "Partners" card grid and "Brands We Have Served"
-// marquee into one editorial trust strip — real, verified names only
-// (docs/CONTENT_REVIEW_REQUIRED.md), shown as typographic wordmarks
-// rather than recreated brand-logo artwork (no genuine SAP/Profit.co/
-// Resecurity/HostBooks logo assets exist in this project — see
-// docs/DESIGN_SYSTEM.md "Logo rules").
+// Customer-logo section — SAP + verified technology partners, plus the
+// scrolling "Brands We Have Served" wall. Per suggestions.docx #4, this now
+// renders right after the Hero (see HomePage.tsx) instead of being buried
+// near the Evidence section. Partner names are shown as typographic
+// wordmarks (no recreated partner-logo artwork); brand logos in the
+// scrolling wall are DEMO/PLACEHOLDER images (see data/homeContent.ts) to be
+// swapped for real artwork later.
 export function TrustSection() {
   const named = verifiedPartners.filter((p) => p.name);
   const looped = [...brandsServed, ...brandsServed];
 
   return (
     <section className="border-y border-border bg-surface py-14 lg:py-16">
-      <div className="container-content">
+      {/* <div className="container-content">
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -55,22 +56,27 @@ export function TrustSection() {
             </motion.li>
           </motion.ul>
         </motion.div>
-      </div>
+      </div> */}
 
-      <div className="container-content mt-10">
+      <div className="container-content ">
         <p className="mb-5 text-center text-xs font-semibold uppercase tracking-[0.14em] text-text-secondary/70">
           Brands We Have Served
         </p>
       </div>
-      <div className="overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-        <div className="flex w-max animate-[marquee_30s_linear_infinite] gap-12">
+      {/* Monochrome scrolling logo wall. `brand.logo` is a DEMO/PLACEHOLDER
+          wordmark (see data/homeContent.ts) — swap the files in
+          public/customers/ for real logo artwork when it's available;
+          no code change is needed here to do that. */}
+      <div className="overflow-hidden mt-10 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+        <div className="flex w-max animate-[marquee_30s_linear_infinite] items-center gap-14">
           {looped.map((brand, i) => (
-            <span
-              key={`${brand}-${i}`}
-              className="whitespace-nowrap text-lg font-semibold text-text-secondary/50 grayscale transition-colors duration-200 hover:text-primary hover:grayscale-0"
-            >
-              {brand}
-            </span>
+            <img
+              key={`${brand.name}-${i}`}
+              src={brand.logo}
+              alt={brand.name}
+              title={brand.name}
+              className="h-16 w-auto shrink-0  transition-all duration-200 hover:opacity-100 hover:grayscale-0"
+            />
           ))}
         </div>
       </div>

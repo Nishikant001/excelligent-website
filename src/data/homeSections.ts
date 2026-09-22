@@ -202,9 +202,13 @@ export const productsSection = {
   flagship: {
     slug: "e-vault",
     name: "e-Vault",
-    tag: "AI-Powered Enterprise Document Management",
+    // NOTE: e-Vault itself does not run AI features today — AI capability
+    // (e.g. AI-powered search) is still in implementation. Keep this copy
+    // as "Intelligent" rather than "AI-Powered"/"AI Search" until that work
+    // ships, then update both fields below.
+    tag: "Intelligent Enterprise Document Management",
     tagline: "Turn enterprise documents into searchable, intelligent knowledge.",
-    capabilities: ["OCR", "AI Search", "SAP Integration", "Workflow", "Secure Repository"],
+    capabilities: ["OCR", "Intelligent Search", "SAP Integration", "Workflow", "Secure Repository"],
     primary: { label: "Explore e-Vault", href: ROUTES.product("e-vault") },
     secondary: {
       label: "Request Demo",
@@ -358,8 +362,8 @@ export const industriesSection = {
 // ---- 11. Why Excelligent -----------------------------------------------------------
 export const whySection = {
   eyebrow: "Why Excelligent",
-  headlineLine1: "Big enough to deliver.",
-  headlineLine2: "Agile enough to care.",
+  headlineLine1: "Enterprise expertise.",
+  headlineLine2: "Built for speed.",
   statements: [
     { title: "Enterprise Experience", description: "Deep experience across complex SAP landscapes." },
     { title: "Senior-Led Delivery", description: "Experienced consultants close to the engagement." },

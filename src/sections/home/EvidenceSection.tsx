@@ -2,15 +2,17 @@ import { motion } from "framer-motion";
 
 import { fadeUp, staggerChildren, viewportOnce } from "@/lib/animations";
 import { CountUp } from "@/components/CountUp";
-import { brandsServed } from "@/data/homeContent";
 import { evidence } from "@/data/homeSections";
 
 // Section 8 of the brief — "Evidence: very minimal". Big animated numbers,
 // then the one-line mission. (Numbers flagged `verified: false` in
 // homeSections.ts still need to be confirmed by the business before launch.)
+//
+// The customer-logo wall that used to live at the bottom of this section
+// now renders once, higher up the page, via <TrustSection /> right after
+// the Hero (see HomePage.tsx and suggestions.docx #4) — it isn't repeated
+// here to avoid showing the same logos twice on one page.
 export function EvidenceSection() {
-  const looped = [...brandsServed, ...brandsServed];
-
   return (
     <section className="bg-surface py-24 lg:py-36" aria-labelledby="evidence-heading">
       <div className="container-content">
@@ -53,24 +55,6 @@ export function EvidenceSection() {
             </p>
           </div>
         </motion.div>
-      </div>
-
-      {/* Brands already published on the existing site — kept as a quiet strip. */}
-      <div className="container-content mt-20">
-        <p className="mb-5 text-xs font-semibold uppercase tracking-[0.16em] text-text-secondary/70">Brands we have served</p>
-      </div>
-      <div className="overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-        <div className="flex w-max animate-ribbon gap-12 motion-reduce:animate-none">
-          {looped.map((brand, i) => (
-            <span
-              key={`${brand}-${i}`}
-              aria-hidden={i >= brandsServed.length ? true : undefined}
-              className="whitespace-nowrap text-lg font-semibold text-text-secondary/55 transition-colors duration-200 hover:text-primary"
-            >
-              {brand}
-            </span>
-          ))}
-        </div>
       </div>
     </section>
   );

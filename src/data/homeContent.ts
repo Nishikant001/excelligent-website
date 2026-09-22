@@ -50,17 +50,27 @@ export const statCounters: StatCounter[] = [
 
 // Brand logos shown under "Brands We have Served" on the live Home page.
 // These are real client/brand names as published on the live site.
-export const brandsServed: string[] = [
-  "KIA Motors",
-  "Napino Auto",
-  "Oasis Group",
-  "BBC Cellpack",
-  "Hyundai Kefico",
-  "Psychotropic",
-  "Supreme Agro",
-  "Willowood",
-  "Safex",
-  "Konark",
+//
+// `logo` currently points to a DEMO/PLACEHOLDER wordmark generated for
+// layout purposes only (public/customers/*.svg) — it is NOT the client's
+// real logo artwork. Swap each file in public/customers/ for the actual
+// brand logo when it's available; the filenames below can stay the same.
+export interface BrandServed {
+  name: string;
+  logo: string;
+}
+
+export const brandsServed: BrandServed[] = [
+  { name: "KIA Motors", logo: "/customers/kia-motors.webp" },
+  { name: "Napino Auto", logo: "/customers/napino-auto.png" },
+  { name: "Oasis Group", logo: "/customers/oasis-group.png" },
+  { name: "BBC Cellpack", logo: "/customers/bbc-cellpack.jpg" },
+  { name: "Hyundai Kefico", logo: "/customers/hyundai-kefico.png" },
+  { name: "Psychotropic", logo: "/customers/psychotropic.svg" },
+  { name: "Supreme Agro", logo: "/customers/supreme-agro.jpg" },
+  { name: "Willowood", logo: "/customers/willowood.png" },
+  { name: "Safex", logo: "/customers/safex.avif" },
+  { name: "Konark", logo: "/customers/konark.png" },
 ];
 
 // The "Your digital transformation partner" intro strip on the live Home

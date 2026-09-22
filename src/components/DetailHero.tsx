@@ -2,12 +2,19 @@ import type { LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
 import { Breadcrumb, type Crumb } from "@/components/Breadcrumb";
 import { fadeUp, staggerChildren } from "@/lib/animations";
+import { DataNetworkCanvas } from "@/components/visuals/DataNetworkCanvas";
 
 // Shared hero for Solution/Service/Product detail pages — each keeps its
 // own category-tinted gradient (via `gradient`) for visual variety, but
 // all three now share one consistent, premium layout and spacing so the
 // site doesn't feel like three slightly-different implementations of the
 // same idea.
+//
+// Also carries the homepage Hero's animated data-network canvas (all the
+// category gradients above are dark navy/blue/violet tones, so the canvas
+// reads fine on every one of them) for the same reason it was added to
+// PageHero and ContactHero — one consistent design language across the
+// whole site, not just Home.
 export function DetailHero({
   breadcrumb,
   eyebrow,
@@ -26,6 +33,9 @@ export function DetailHero({
   return (
     <section className={`relative overflow-hidden ${gradient}`}>
       <div className="absolute inset-0 bg-hero-grid bg-grid opacity-[0.12]" aria-hidden="true" />
+      <div className="absolute inset-0 opacity-[0.3]" aria-hidden="true">
+        <DataNetworkCanvas className="block h-full w-full" />
+      </div>
       <div
         className="absolute -right-24 top-0 h-72 w-72 rounded-full bg-white/10 blur-3xl"
         aria-hidden="true"

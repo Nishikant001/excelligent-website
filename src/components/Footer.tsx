@@ -110,13 +110,21 @@ export function Footer() {
             ]}
           />
 
-          {/* Solutions */}
+          {/* Solutions — per suggestions.docx #7, the footer's Solutions
+              column now leads with the new SAP-forward architecture
+              (GROW / RISE / BTP) instead of mixing it flat with the legacy
+              site's OKR/HCM/Cyber Security/HostBooks items. Those legacy
+              solutions are kept live and linked (see the "Other solutions"
+              line below), just no longer positioned as equally prominent
+              as the SAP platform work. */}
           <FooterColumn
             title="Solutions"
-            links={solutions.map((s) => ({
-              label: s.navLabel,
-              href: ROUTES.solution(s.slug),
-            }))}
+            links={solutions
+              .filter((s) => ["grow-with-sap", "rise-with-sap", "sap-btp"].includes(s.slug))
+              .map((s) => ({
+                label: s.navLabel,
+                href: ROUTES.solution(s.slug),
+              }))}
           />
 
           {/* Services */}
@@ -147,6 +155,25 @@ export function Footer() {
               href: ROUTES.product(p.slug),
             }))}
           />
+        </div>
+
+        {/* Legacy-site solutions (OKR, HCM, Cyber Security, HostBooks ERP) —
+            kept as low-key links rather than a full footer column, per
+            suggestions.docx #7. */}
+        <div className="mt-10 border-t border-white/10 pt-6">
+          <p className="text-xs text-white/45">
+            Other solutions:{" "}
+            {solutions
+              .filter((s) => !["grow-with-sap", "rise-with-sap", "sap-btp"].includes(s.slug))
+              .map((s, i, arr) => (
+                <span key={s.slug}>
+                  <Link to={ROUTES.solution(s.slug)} className="text-white/55 hover:text-white">
+                    {s.navLabel}
+                  </Link>
+                  {i < arr.length - 1 ? " · " : ""}
+                </span>
+              ))}
+          </p>
         </div>
 
         {/* Contact Information */}
@@ -180,7 +207,7 @@ export function Footer() {
             </p>
 
             <p className="mt-1.5 text-sm text-white/75">
-              {contact.addresses[0].addressLines.join(", ")}
+              {contact.addresses[2].addressLines.join(", ")}
             </p>
           </div>
         </div>

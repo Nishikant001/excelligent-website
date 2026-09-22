@@ -32,11 +32,11 @@ export const company: CompanyInfo = {
 
 // Sourced verbatim from the shared "Get In Touch" footer/contact block.
 export const contact: ContactInfo = {
-  email: "info@excelligent.co.in",
+  email: "sales@excelligent.co.in",
   phones: ["+91-9958583205", "+91-11-43108915"],
   addresses: [
     {
-      label: "Gurugram (HQ)",
+      label: "Gurugram ",
       addressLines: [
         "Building Number 359, near Maruti Vocational School",
         "Chakkarpur, Sector 28, Gurugram, Haryana 122001",
@@ -45,13 +45,14 @@ export const contact: ContactInfo = {
     {
       label: "Bhubaneswar",
       addressLines: [
-        "Plot No-2172/3502/3673, Puri Cuttack Road",
-        "Near Tata Motors Dion Automotives, Sriram Nagar",
-        "Bhubaneswar, Khordha, Odisha, 751002",
-      ],
+  "Room No-441, 4th Floor, Nexus Esplanade (Office Block)",
+  "Puri - Cuttack Road, Rasulgarh Industrial Estate, Rasulgarh",
+  "Bhubaneswar, Khordha, Odisha, 751010",
+]
+
     },
     {
-      label: "New Delhi",
+      label: "New Delhi (HQ)",
       addressLines: ["102, P. No 92, Block X, New Roshan Puri, New Delhi – 110043"],
     },
   ],
