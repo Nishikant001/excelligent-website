@@ -1,8 +1,28 @@
-import { Outlet } from "react-router-dom";
+import { useEffect } from "react";
+import { Outlet, useLocation } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
+import { AskExcelligentAI } from "@/components/AskExcelligentAI";
 import { organizationSchema, websiteSchema } from "@/lib/structuredData";
+
+// Client-side navigation keeps the previous scroll offset unless told
+// otherwise, so a link clicked in the footer used to open the next page at the
+// bottom. Scroll to the top on route change (or to the #hash target).
+function ScrollToTop() {
+  const { pathname, hash } = useLocation();
+  useEffect(() => {
+    if (hash) {
+      const el = document.getElementById(hash.slice(1));
+      if (el) {
+        el.scrollIntoView();
+        return;
+      }
+    }
+    window.scrollTo(0, 0);
+  }, [pathname, hash]);
+  return null;
+}
 
 export default function MainLayout() {
   return (
@@ -17,11 +37,13 @@ export default function MainLayout() {
       >
         Skip to main content
       </a>
+      <ScrollToTop />
       <Navbar />
       <main id="main-content" className="flex-1">
         <Outlet />
       </main>
       <Footer />
+      <AskExcelligentAI />
     </div>
   );
 }

@@ -15,6 +15,8 @@ import IndustriesIndexPage from "@/pages/IndustriesIndexPage";
 import IndustryPage from "@/pages/IndustryPage";
 import CaseStudiesPage from "@/pages/CaseStudiesPage";
 import CaseStudyPage from "@/pages/CaseStudyPage";
+import AiDataPage from "@/pages/AiDataPage";
+import CloudPage from "@/pages/CloudPage";
 import BlogPage from "@/pages/BlogPage";
 import ContactPage from "@/pages/ContactPage";
 import NotFoundPage from "@/pages/NotFoundPage";
@@ -37,6 +39,8 @@ export default function App() {
           <Route path="overview" element={<OverviewPage />} />
           <Route path="our-team" element={<TeamPage />} />
           <Route path="our-partnerships" element={<PartnershipsPage />} />
+          <Route path="ai-and-data" element={<AiDataPage />} />
+          <Route path="cloud" element={<CloudPage />} />
           <Route path="solutions" element={<SolutionsIndexPage />} />
           <Route path="solutions/:slug" element={<SolutionPage />} />
           <Route path="services" element={<ServicesIndexPage />} />

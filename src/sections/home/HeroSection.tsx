@@ -1,214 +1,79 @@
-import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 import { fadeUp, staggerChildren } from "@/lib/animations";
 import { Button } from "@/components/Button";
-import { ROUTES } from "@/routes/paths";
+import { DataNetworkCanvas } from "@/components/visuals/DataNetworkCanvas";
+import { hero } from "@/data/homeSections";
 
-const heroSlides = [
-  {
-    image: "/hero/hero-1.png",
-    alt: "Business transformation and SAP technology",
-  },
-  {
-    image: "/hero/hero-2.png",
-    alt: "Enterprise digital transformation",
-  },
-  {
-    image: "/hero/hero-3.png",
-    alt: "Cloud and intelligent enterprise technology",
-  },
-  {
-    image: "/hero/hero-4.png",
-    alt: "Analytics and business automation",
-  },
-];
-
+// Section 1 of the homepage brief — "Hero, first 5 seconds": near-black
+// background, a subtle animated network of data nodes flowing between SAP,
+// cloud, AI and enterprise systems, the headline, two CTAs, and a slowly
+// moving technology ribbon along the bottom.
 export function HeroSection() {
-  const [activeSlide, setActiveSlide] = useState(0);
-
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      setActiveSlide((current) => (current + 1) % heroSlides.length);
-    }, 5000);
-
-    return () => window.clearInterval(timer);
-  }, []);
+  const ribbon = [...hero.ribbon, ...hero.ribbon, ...hero.ribbon, ...hero.ribbon];
 
   return (
-    <section className="relative min-h-[680px] overflow-hidden bg-[#06245F] lg:min-h-[760px]">
-      {/* =========================
-          BACKGROUND IMAGE SLIDER
-      ========================== */}
-      <div className="absolute inset-0">
-        <AnimatePresence initial={false}>
-          <motion.img
-            key={heroSlides[activeSlide].image}
-            src={heroSlides[activeSlide].image}
-            alt={heroSlides[activeSlide].alt}
-            initial={{
-              opacity: 0,
-              scale: 1.06,
-            }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-            }}
-            exit={{
-              opacity: 0,
-              scale: 1.02,
-            }}
-            transition={{
-              opacity: {
-                duration: 1.3,
-                ease: "easeInOut",
-              },
-              scale: {
-                duration: 5,
-                ease: "linear",
-              },
-            }}
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-        </AnimatePresence>
+    <section className="relative isolate overflow-hidden bg-midnight">
+      {/* Backdrop: midnight mesh + faint grid */}
+      <div className="absolute inset-0 bg-navy-mesh" aria-hidden="true" />
+      <div className="absolute inset-0 bg-hero-grid bg-grid opacity-[0.18] [mask-image:radial-gradient(ellipse_at_70%_40%,black,transparent_70%)]" aria-hidden="true" />
 
-        {/* Left dark gradient for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#06245F]/100 via-[#073B7A]/60 to-transparent" />
-
-        {/* Bottom fade */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#06245F]/75 via-transparent to-transparent" />
-
-        {/* Subtle blue glow */}
-        <div
-          className="absolute -right-40 -top-40 h-[34rem] w-[34rem] rounded-full bg-[#20C7E8]/15 blur-3xl"
-          aria-hidden="true"
-        />
+      {/* Animated data network */}
+      <div className="absolute inset-0 opacity-45 sm:opacity-70 lg:opacity-100" aria-hidden="true">
+        <DataNetworkCanvas className="block h-full w-full" />
       </div>
 
-      {/* =========================
-          HERO CONTENT
-      ========================== */}
-      <div className="container-content relative z-10 flex min-h-[680px] items-center py-20 lg:min-h-[760px] lg:py-24">
-        <motion.div
-          variants={staggerChildren()}
-          initial="hidden"
-          animate="show"
-          className="w-full max-w-3xl"
-        >
-          {/* Eyebrow */}
-          <motion.div
-            variants={fadeUp}
-            className="mb-6 flex items-center gap-3"
-          >
-            <span className="h-5 w-1 rounded-full bg-[#5FD1CF]" />
+      {/* Left-hand readability scrim */}
+      <div
+        className="absolute inset-0 bg-gradient-to-r from-midnight via-midnight/70 to-transparent lg:via-midnight/40"
+        aria-hidden="true"
+      />
 
-            <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#5FD1CF]">
-              Your Partner In Business Transformation
-            </span>
-          </motion.div>
-
-          {/* Main Heading */}
-          <motion.h1
-            variants={fadeUp}
-            className="max-w-3xl text-hero text-white"
-          >
-            Business transformation,
-            <br className="hidden sm:block" />
-            powered by{" "}
-            <span className="text-[#5FD1CF]">SAP</span>.
-          </motion.h1>
-
-          {/* Description */}
-          <motion.p
-            variants={fadeUp}
-            className="mt-6 max-w-2xl text-lg leading-relaxed text-white/80 lg:text-xl"
-          >
-            Excelligent helps enterprises adopt SAP, cloud, analytics, and
-            intelligent automation with confidence — a focused, experienced
-            delivery team combining deep SAP expertise with a people-first
-            approach.
+      <div className="container-content relative z-10 flex min-h-[calc(100svh-4.5rem)] items-center pb-28 pt-16 xl:min-h-[calc(100svh-5rem)] lg:pb-32">
+        <motion.div variants={staggerChildren()} initial="hidden" animate="show" className="w-full max-w-3xl">
+          <motion.p variants={fadeUp} className="eyebrow eyebrow-light mb-6 tracking-[0.3em]">
+            {hero.eyebrow}
           </motion.p>
 
-          {/* CTA */}
-          <motion.div
+          <motion.h1
             variants={fadeUp}
-            className="mt-9 flex flex-wrap gap-4"
+            className="font-display text-[clamp(2.5rem,1.35rem+3.6vw,4.6rem)] font-extrabold leading-[1.04] tracking-[-0.02em] text-white"
           >
-            <Button
-              as="a"
-              href={ROUTES.solutions}
-              size="lg"
-              withArrow
-              className="group"
-            >
-              Explore Our Solutions
-            </Button>
+            {hero.headlineLine1}
+            <br />
+            {hero.headlineLine2Prefix} <span className="text-gradient-ai">{hero.headlineLine2Accent}</span>
+          </motion.h1>
 
-            <Button
-              as="a"
-              href={ROUTES.contact}
-              size="lg"
-              variant="outline"
-              className="border-white/50 text-white hover:bg-white hover:text-primary"
-            >
-              Talk to Our Experts
+          <motion.p variants={fadeUp} className="mt-7 max-w-2xl text-lg leading-relaxed text-white/75 lg:text-xl">
+            {hero.subheading}
+          </motion.p>
+
+          <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-4">
+            <Button as="a" href={hero.primaryCta.href} size="lg" variant="gradient" withArrow className="group">
+              {hero.primaryCta.label}
+            </Button>
+            <Button as="a" href={hero.secondaryCta.href} size="lg" variant="outlineLight" withArrow className="group">
+              {hero.secondaryCta.label}
             </Button>
           </motion.div>
         </motion.div>
       </div>
 
-      {/* =========================
-          SLIDER CONTROLS
-      ========================== */}
-      <div className="absolute bottom-7 left-0 right-0 z-20">
-        <div className="container-content flex items-center justify-between">
-          {/* Counter */}
-          <div className="flex items-center gap-3 text-white">
-            <span className="text-sm font-semibold tracking-[0.15em]">
-              {String(activeSlide + 1).padStart(2, "0")}
-            </span>
-
-            <span className="text-white/40">/</span>
-
-            <span className="text-sm text-white/50">
-              {String(heroSlides.length).padStart(2, "0")}
-            </span>
-
-            {/* Progress */}
-            <div className="ml-3 hidden h-[2px] w-28 overflow-hidden bg-white/25 sm:block">
-              <motion.div
-                key={activeSlide}
-                initial={{ width: "0%" }}
-                animate={{ width: "100%" }}
-                transition={{
-                  duration: 5,
-                  ease: "linear",
-                }}
-                className="h-full bg-[#5FD1CF]"
-              />
-            </div>
-          </div>
-
-          {/* Dots */}
-          <div className="flex items-center gap-2">
-            {heroSlides.map((slide, index) => (
-              <button
-                key={slide.image}
-                type="button"
-                onClick={() => setActiveSlide(index)}
-                aria-label={`Show hero slide ${index + 1}`}
-                className="flex h-7 items-center justify-center"
+      {/* Technology ribbon */}
+      <div className="absolute inset-x-0 bottom-0 z-10 border-t border-white/10 bg-midnight/60 backdrop-blur-md">
+        <div className="overflow-hidden py-4 [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+          <ul className="flex w-max animate-ribbon items-center gap-10 motion-reduce:animate-none" aria-label="Technology focus">
+            {ribbon.map((item, i) => (
+              <li
+                key={`${item}-${i}`}
+                aria-hidden={i >= hero.ribbon.length ? true : undefined}
+                className="flex items-center gap-10 whitespace-nowrap text-xs font-semibold uppercase tracking-[0.2em] text-white/60"
               >
-                <span
-                  className={`block rounded-full transition-all duration-300 ${
-                    activeSlide === index
-                      ? "h-2 w-8 bg-[#5FD1CF]"
-                      : "h-2 w-2 bg-white/40 hover:bg-white/70"
-                  }`}
-                />
-              </button>
+                {item}
+                <span className="h-1 w-1 rounded-full bg-secondary-light/70" aria-hidden="true" />
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </section>

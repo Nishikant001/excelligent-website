@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, Menu, X } from "lucide-react";
@@ -38,26 +39,27 @@ export function MobileNavigation() {
   }, [open]);
 
   return (
-    <div className="lg:hidden">
+    <div className="xl:hidden">
       <button
         type="button"
         aria-label={open ? "Close menu" : "Open menu"}
         aria-expanded={open}
         aria-controls="mobile-nav-drawer"
         onClick={() => setOpen((v) => !v)}
-        className="rounded-md p-2 text-text-primary hover:bg-surface-muted"
+        className="rounded-md p-2 text-white hover:bg-white/10"
       >
         {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
       </button>
 
-      <AnimatePresence>
+      {typeof document !== "undefined" && createPortal(
+        <AnimatePresence>
         {open && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-50 bg-black/30"
+            className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm"
             onClick={close}
           >
             <motion.div
@@ -67,14 +69,14 @@ export function MobileNavigation() {
               transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
               onClick={(e) => e.stopPropagation()}
               id="mobile-nav-drawer"
-              className="absolute right-0 top-0 h-full w-[86%] max-w-sm overflow-y-auto bg-surface p-6 shadow-card-hover"
+              className="absolute right-0 top-0 h-full w-[86%] max-w-sm overflow-y-auto border-l border-white/10 bg-midnight-900 p-6 text-white shadow-card-hover"
               role="dialog"
               aria-modal="true"
               aria-label="Mobile navigation"
             >
               <div className="flex items-center justify-between mb-6">
-                <span className="font-display font-bold text-primary">Excelligent</span>
-                <button aria-label="Close menu" onClick={close} className="p-2">
+                <img src="/ecs-footer.png" alt="Excelligent" className="h-9 w-auto object-contain" />
+                <button aria-label="Close menu" onClick={close} className="rounded-md p-2 hover:bg-white/10">
                   <X className="h-5 w-5" />
                 </button>
               </div>
@@ -88,19 +90,19 @@ export function MobileNavigation() {
                         key={item.label}
                         to={item.href}
                         onClick={close}
-                        className="block rounded-md px-2 py-3 text-base font-medium text-text-primary hover:bg-surface-muted"
+                        className="block rounded-md px-2 py-3 text-base font-medium text-white hover:bg-white/5"
                       >
                         {item.label}
                       </Link>
                     );
                   }
                   return (
-                    <div key={item.label} className="border-b border-border last:border-b-0">
+                    <div key={item.label} className="border-b border-white/10 last:border-b-0">
                       <button
                         type="button"
                         onClick={() => setExpanded(isExpanded ? null : item.label)}
                         aria-expanded={isExpanded}
-                        className="flex w-full items-center justify-between rounded-md px-2 py-3 text-base font-medium text-text-primary"
+                        className="flex w-full items-center justify-between rounded-md px-2 py-3 text-base font-medium text-white"
                       >
                         {item.label}
                         <ChevronDown
@@ -121,7 +123,7 @@ export function MobileNavigation() {
                                 key={link.href}
                                 to={link.href}
                                 onClick={close}
-                                className="block rounded-md px-2 py-2 text-sm text-text-secondary hover:bg-surface-muted hover:text-primary"
+                                className="block rounded-md px-2 py-2 text-sm text-white/70 hover:bg-white/5 hover:text-white"
                               >
                                 {link.label}
                               </Link>
@@ -134,13 +136,22 @@ export function MobileNavigation() {
                 })}
               </nav>
 
-              <Button as="a" href={ROUTES.contact} onClick={close} className="mt-6 w-full">
+              <Button
+                as="a"
+                href={ROUTES.contact}
+                onClick={close}
+                variant="gradient"
+                withArrow
+                className="group mt-6 w-full"
+              >
                 Let's Talk
               </Button>
             </motion.div>
           </motion.div>
         )}
-      </AnimatePresence>
+        </AnimatePresence>,
+        document.body
+      )}
     </div>
   );
 }

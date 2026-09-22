@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { useSearchParams } from "react-router-dom";
 import { fadeUp, viewportOnce } from "@/lib/animations";
 import { FormField } from "@/components/contact/FormField";
 import { fieldInputClasses, fieldBorderClass } from "@/lib/formFieldStyles";
@@ -25,7 +26,18 @@ const COOLDOWN_MS = 20_000;
 const MIN_SUBMIT_INTERVAL_MS = 4_000;
 
 export function ContactForm() {
-  const [values, setValues] = useState<ContactFormValues>(EMPTY_VALUES);
+  // Links such as the homepage's "Talk to an Expert" / "Request Demo" and the
+  // Ask Excelligent AI assistant pre-fill the enquiry via ?interest=&message=.
+  const [searchParams] = useSearchParams();
+  const [values, setValues] = useState<ContactFormValues>(() => {
+    const interest = searchParams.get("interest") ?? "";
+    const message = searchParams.get("message") ?? "";
+    return {
+      ...EMPTY_VALUES,
+      interest: contactInterestOptions.includes(interest) ? interest : "",
+      message: message.slice(0, 500),
+    };
+  });
   const [errors, setErrors] = useState<ContactFormErrors>({});
   const [status, setStatus] = useState<Status>("idle");
   const [cooldownActive, setCooldownActive] = useState(false);

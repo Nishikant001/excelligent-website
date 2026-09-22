@@ -21,11 +21,16 @@ export function MegaMenu({
 
   // Keep single- and two-column menus noticeably narrower than a full
   // 3-column mega menu instead of always reserving the same wide panel.
+  const hasDescriptions = item.columns.some((c) => c.links.some((l) => l.description));
   const widthClass =
     item.columns.length >= 3
-      ? "w-[min(90vw,620px)]"
+      ? "w-[min(90vw,720px)]"
       : item.columns.length === 2
-      ? "w-[min(85vw,440px)]"
+      ? hasDescriptions
+        ? "w-[min(90vw,620px)]"
+        : "w-[min(85vw,460px)]"
+      : hasDescriptions
+      ? "w-[min(80vw,340px)]"
       : "w-[min(80vw,300px)]";
 
   return (
@@ -35,7 +40,7 @@ export function MegaMenu({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 8 }}
       transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
-      className={`absolute top-full z-40 mt-3 ${widthClass} ${positionClass} rounded-2xl border border-border/70 bg-surface p-6 shadow-panel-light`}
+      className={`absolute top-full z-40 mt-3 ${widthClass} ${positionClass} rounded-2xl border border-white/10 bg-midnight-800/95 p-5 shadow-[0_24px_60px_-20px_rgba(0,0,0,0.7)] backdrop-blur-xl`}
       role="menu"
     >
       <div
@@ -50,7 +55,7 @@ export function MegaMenu({
         {item.columns.map((column, i) => (
           <div key={i}>
             {column.heading && (
-              <p className="mb-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-secondary-dark">
+              <p className="mb-2.5 px-3 text-xs font-semibold uppercase tracking-[0.12em] text-secondary-light">
                 {column.heading}
               </p>
             )}
@@ -60,11 +65,11 @@ export function MegaMenu({
                   <Link
                     to={link.href}
                     role="menuitem"
-                    className="block rounded-lg px-3 py-1.5 text-sm text-text-primary transition-colors duration-150 hover:bg-surface-muted hover:text-primary"
+                    className="block rounded-lg px-3 py-2 text-sm font-medium text-white/90 transition-colors duration-150 hover:bg-white/5 hover:text-white"
                   >
                     {link.label}
                     {link.description && (
-                      <span className="block text-xs text-text-secondary">{link.description}</span>
+                      <span className="mt-0.5 block text-xs font-normal text-white/50">{link.description}</span>
                     )}
                   </Link>
                 </li>

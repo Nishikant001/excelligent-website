@@ -21,5 +21,8 @@ export const contactInterestOptions: string[] = [
   ...solutionSlugsForContact
     .map((slug) => solutions.find((s) => s.slug === slug)?.navLabel)
     .filter((label): label is string => Boolean(label)),
+  "AI & Data",
+  "Cloud & AWS",
+  "Products / Demo Request",
   "Other",
 ];

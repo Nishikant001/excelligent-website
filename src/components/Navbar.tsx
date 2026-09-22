@@ -7,6 +7,9 @@ import { MobileNavigation } from "@/components/MobileNavigation";
 import { Button } from "@/components/Button";
 import { ROUTES } from "@/routes/paths";
 
+// Dark "midnight" header used on every page (homepage brief, design
+// language): it sits directly on top of the dark hero panels, turning into a
+// slightly more opaque glass bar with a hairline once the page is scrolled.
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
@@ -36,23 +39,14 @@ export function Navbar() {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-surface/95 backdrop-blur-md shadow-sm border-b border-border"
-          : "bg-surface/80 backdrop-blur-sm border-b border-transparent"
+          ? "border-b border-white/10 bg-midnight/90 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.6)] backdrop-blur-xl"
+          : "border-b border-white/5 bg-midnight/70 backdrop-blur-md"
       }`}
     >
-      <div className="container-content flex h-[4.5rem] items-center justify-between lg:h-20">
-        
-        {/* Excelligent Logo */}
-        <Link
-          to={ROUTES.home}
-          className="flex items-center shrink-0"
-          aria-label="Excelligent Home"
-        >
-          <img
-            src="/ecs.png"
-            alt="Excelligent"
-            className="h-11 w-auto object-contain lg:h-12"
-          />
+      <div className="container-content flex h-[4.5rem] items-center justify-between gap-6 xl:h-20">
+        {/* Excelligent Logo (light-on-dark variant) */}
+        <Link to={ROUTES.home} className="flex shrink-0 items-center" aria-label="Excelligent Home">
+          <img src="/ecs-footer.png" alt="Excelligent" className="h-10 w-auto object-contain xl:h-11" />
         </Link>
 
         <DesktopNavigation />
@@ -62,7 +56,9 @@ export function Navbar() {
             as="a"
             href={ROUTES.contact}
             size="sm"
-            className="hidden lg:inline-flex"
+            variant="gradient"
+            withArrow
+            className="group hidden xl:inline-flex"
           >
             Let's Talk
           </Button>

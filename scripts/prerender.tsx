@@ -43,6 +43,8 @@ function resolveSeoForPath(routePath: string): SeoMetadata {
   if (routePath === "/overview") return pageSeo.overview;
   if (routePath === "/our-team") return pageSeo.ourTeam;
   if (routePath === "/our-partnerships") return pageSeo.ourPartnerships;
+  if (routePath === "/ai-and-data") return pageSeo.aiAndData;
+  if (routePath === "/cloud") return pageSeo.cloud;
   if (routePath === "/solutions") return pageSeo.solutionsIndex;
   if (routePath === "/services") return pageSeo.servicesIndex;
   if (routePath === "/products") return pageSeo.productsIndex;
@@ -138,6 +140,8 @@ const routes: string[] = [
   "/overview",
   "/our-team",
   "/our-partnerships",
+  "/ai-and-data",
+  "/cloud",
   "/solutions",
   ...solutions.map((s) => `/solutions/${s.slug}`),
   "/services",

@@ -6,6 +6,8 @@ export const ROUTES = {
   overview: "/overview",
   ourTeam: "/our-team",
   ourPartnerships: "/our-partnerships",
+  aiAndData: "/ai-and-data",
+  cloud: "/cloud",
   solutions: "/solutions",
   solution: (slug: string) => `/solutions/${slug}`,
   services: "/services",
@@ -18,6 +20,6 @@ export const ROUTES = {
   caseStudies: "/case-studies",
   caseStudy: (id: string) => `/case-studies/${id}`,
   legacyCaseStudies: "/resources/case-studies", // redirected to caseStudies, kept for old links
-  blog: "/resources/blog",
+  blog: "/resources/blog", // navigation label is "Insights"
   contact: "/contact",
 } as const;

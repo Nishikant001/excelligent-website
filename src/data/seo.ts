@@ -11,8 +11,20 @@ export const pageSeo: Record<string, SeoMetadata> = {
   home: {
     title: "Excelligent | SAP & Digital Transformation Consulting",
     description:
-      "Excelligent Consulting Services helps enterprises adopt SAP S/4HANA, cloud, OKR, HCM, and cyber security solutions with a focused, experienced delivery team.",
+      "Excelligent modernizes mission-critical enterprises with SAP S/4HANA, BTP, AI and cloud — plus proprietary enterprise products such as e-Vault. Enterprise transformation, powered by SAP, Cloud & AI.",
     canonical: `${BASE}/`,
+  },
+  aiAndData: {
+    title: "AI & Data | Enterprise AI on SAP | Excelligent",
+    description:
+      "AI that understands your enterprise: AI agents, analytics and intelligent automation connected to SAP S/4HANA, SAP BTP and e-Vault — for finance, procurement, operations and AMS.",
+    canonical: `${BASE}/ai-and-data`,
+  },
+  cloud: {
+    title: "SAP on Cloud & AWS | Excelligent",
+    description:
+      "SAP meets cloud: migration, infrastructure and managed cloud for SAP and enterprise applications, with security, backup and disaster recovery built in.",
+    canonical: `${BASE}/cloud`,
   },
   overview: {
     title: "About Excelligent | SAP Consulting Company Overview",
@@ -69,7 +81,7 @@ export const pageSeo: Record<string, SeoMetadata> = {
     canonical: `${BASE}/contact`,
   },
   blog: {
-    title: "Blog | Excelligent",
+    title: "Insights | Excelligent",
     canonical: `${BASE}/resources/blog`,
     robots: "noindex, follow",
   },

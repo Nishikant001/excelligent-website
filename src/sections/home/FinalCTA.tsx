@@ -1,49 +1,45 @@
 import { motion } from "framer-motion";
+import { Mail, Phone } from "lucide-react";
+
 import { fadeUp, staggerChildren, viewportOnce } from "@/lib/animations";
 import { Button } from "@/components/Button";
-import { ROUTES } from "@/routes/paths";
+import { contact } from "@/data/company";
+import { finalCta } from "@/data/homeSections";
 
+// Section 14 — "Final CTA": the screen goes almost completely black; small
+// kicker, huge headline, one action, contact details underneath.
 export function FinalCTA() {
   return (
-    <section className="relative overflow-hidden bg-navy-mesh py-24 lg:py-32">
-      <div className="absolute inset-0 bg-hero-grid bg-grid opacity-[0.12]" aria-hidden="true" />
+    <section className="relative isolate overflow-hidden bg-midnight-950 py-28 lg:py-44">
       <div
-        className="absolute left-1/4 top-0 h-80 w-80 -translate-y-1/3 rounded-full bg-secondary/20 blur-3xl"
+        className="absolute left-1/2 top-1/2 h-[36rem] w-[36rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-primary/20 to-violet/20 blur-3xl"
         aria-hidden="true"
       />
       <div className="container-content relative">
-        <motion.div
-          variants={staggerChildren()}
-          initial="hidden"
-          whileInView="show"
-          viewport={viewportOnce}
-          className="flex flex-col items-start justify-between gap-12 lg:flex-row lg:items-end"
-        >
-          <div className="max-w-2xl">
-            <motion.p variants={fadeUp} className="eyebrow eyebrow-light">
-              Let's Build What's Next
-            </motion.p>
-            <motion.h2 variants={fadeUp} className="mt-5 text-h1 text-white">
-              Ready to transform your business?
-            </motion.h2>
-            <motion.p variants={fadeUp} className="mt-5 max-w-xl text-lg text-white/75">
-              Partner with Excelligent to unlock new opportunities, adopt SAP with confidence,
-              and build a stronger, more resilient tomorrow.
-            </motion.p>
-            <motion.div variants={fadeUp} className="mt-9">
-              <Button as="a" href={ROUTES.contact} size="lg" variant="secondary" withArrow className="group">
-                Let's Connect
-              </Button>
-            </motion.div>
-          </div>
-
-          <motion.div variants={fadeUp} className="shrink-0 text-right">
-            <p className="font-display text-2xl font-bold text-white sm:text-3xl">
-              Higher Possibilities.
-              <br />
-              Together.
-            </p>
-            <span className="mt-3 inline-block h-px w-16 bg-secondary/60" aria-hidden="true" />
+        <motion.div variants={staggerChildren()} initial="hidden" whileInView="show" viewport={viewportOnce} className="mx-auto max-w-5xl text-center">
+          <motion.p variants={fadeUp} className="text-xs font-semibold uppercase tracking-[0.3em] text-white/55 sm:text-sm">
+            {finalCta.kicker}
+          </motion.p>
+          <motion.h2 variants={fadeUp} className="mt-8 font-display text-giant text-white">
+            {finalCta.headline}
+          </motion.h2>
+          <motion.p variants={fadeUp} className="text-gradient-ai mt-8 font-display text-xl font-bold sm:text-2xl">
+            {finalCta.strap}
+          </motion.p>
+          <motion.div variants={fadeUp} className="mt-12">
+            <Button as="a" href={finalCta.cta.href} size="lg" variant="gradient" withArrow className="group">
+              {finalCta.cta.label}
+            </Button>
+          </motion.div>
+          <motion.div variants={fadeUp} className="mt-16 flex flex-col items-center justify-center gap-4 text-white/70 sm:flex-row sm:gap-10">
+            <a href={`mailto:${contact.email}`} className="inline-flex items-center gap-2 hover:text-white">
+              <Mail className="h-4 w-4 text-secondary-light" aria-hidden="true" />
+              {contact.email}
+            </a>
+            <a href={`tel:${contact.phones[0].replace(/[^+\d]/g, "")}`} className="inline-flex items-center gap-2 hover:text-white">
+              <Phone className="h-4 w-4 text-secondary-light" aria-hidden="true" />
+              {contact.phones.join(" · ")}
+            </a>
           </motion.div>
         </motion.div>
       </div>

@@ -1,8 +1,9 @@
 import { forwardRef } from "react";
 import type { ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from "react";
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
-type Variant = "primary" | "secondary" | "outline" | "ghost" | "text";
+type Variant = "primary" | "secondary" | "outline" | "ghost" | "text" | "gradient" | "outlineLight";
 type Size = "sm" | "md" | "lg";
 
 const base =
@@ -23,6 +24,12 @@ const variants: Record<Variant, string> = {
     "border border-primary/40 text-primary bg-transparent hover:border-primary hover:bg-primary hover:text-white",
   ghost: "bg-surface-muted text-text-primary hover:bg-border",
   text: "text-primary hover:text-primary-dark px-0 py-0 rounded-none",
+  // Homepage / dark-section variants (design language: electric blue -> violet
+  // "AI" gradient primary action, glass outline secondary action).
+  gradient:
+    "bg-gradient-to-r from-primary to-violet text-white shadow-[0_8px_30px_-8px_rgba(124,92,255,0.6)] hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0",
+  outlineLight:
+    "border border-white/30 text-white bg-white/5 backdrop-blur-sm hover:border-white/60 hover:bg-white/10",
 };
 
 interface CommonProps {
@@ -51,6 +58,17 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
       const anchorProps = rest as ButtonAsAnchor;
       const { as, ...restAnchorProps } = anchorProps;
       void as;
+      // Internal links use client-side routing (no full page reload);
+      // external / mailto / tel / new-tab links stay plain anchors.
+      if (restAnchorProps.href.startsWith("/") && !restAnchorProps.target) {
+        const { href, ...linkProps } = restAnchorProps;
+        return (
+          <Link ref={ref as React.Ref<HTMLAnchorElement>} to={href} className={classes} {...linkProps}>
+            {children}
+            {withArrow && <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />}
+          </Link>
+        );
+      }
       return (
         <a ref={ref as React.Ref<HTMLAnchorElement>} className={classes} {...restAnchorProps}>
           {children}
