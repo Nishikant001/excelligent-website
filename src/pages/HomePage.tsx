@@ -38,8 +38,9 @@ export default function HomePage() {
       <CapabilitiesSection />
       <EnterpriseAISection />
       <DeepSapSection />
-      <CloudSection />
+      
       <ProductsShowcase />
+      <CloudSection />
       <EvidenceSection />
       <CaseStudiesShowcase />
       <IndustriesWords />

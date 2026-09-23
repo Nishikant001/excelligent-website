@@ -38,15 +38,7 @@ export const teamMembers: TeamMember[] = [
     // linkedin: "https://www.linkedin.com/in/jiban-jena-2788a534/",
     // email: "jiban.jena@excelligent.co.in",
   },
-  {
-    id: "amit-kumar",
-    name: "Amit Kumar",
-    title: "Advisor – Govt Projects",
-    bio: "Amit provides critical expertise and support across various domains, including strategic planning, technical guidance, project management, stakeholder engagement, risk management, financial oversight, regulatory compliance, capacity building, innovation, and sustainability. His role is essential in ensuring that government projects are well-planned, effectively executed, and achieve their desired outcomes.",
-    photo: null,
-    //     linkedin: "https://www.linkedin.com/in/jiban-jena-2788a534/",
-    // email: "jiban.jena@excelligent.co.in",
-  },
+  
   {
     id: "praveen-sharma",
     name: "Praveen Sharma",
