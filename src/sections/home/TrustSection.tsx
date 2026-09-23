@@ -1,10 +1,10 @@
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import { ArrowUpRight } from "lucide-react";
-import { fadeUp, staggerChildren, viewportOnce } from "@/lib/animations";
+// import { motion } from "framer-motion";
+// import { Link } from "react-router-dom";
+// import { ArrowUpRight } from "lucide-react";
+// import { fadeUp, staggerChildren, viewportOnce } from "@/lib/animations";
 import { brandsServed } from "@/data/homeContent";
-import { partners as verifiedPartners } from "@/data/partners";
-import { ROUTES } from "@/routes/paths";
+// import { partners as verifiedPartners } from "@/data/partners";
+// import { ROUTES } from "@/routes/paths";
 
 // Customer-logo section — SAP + verified technology partners, plus the
 // scrolling "Brands We Have Served" wall. Per suggestions.docx #4, this now
@@ -14,7 +14,7 @@ import { ROUTES } from "@/routes/paths";
 // scrolling wall are DEMO/PLACEHOLDER images (see data/homeContent.ts) to be
 // swapped for real artwork later.
 export function TrustSection() {
-  const named = verifiedPartners.filter((p) => p.name);
+  // const named = verifiedPartners.filter((p) => p.name);
   const looped = [...brandsServed, ...brandsServed];
 
   return (
