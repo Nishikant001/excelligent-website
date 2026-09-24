@@ -17,7 +17,7 @@ import { ROUTES } from "@/routes/paths";
 // ERP nav entry, currently a stub). "Open Ecosystem" has no identified
 // related solution and is intentionally left unmapped.
 const relatedSolutionByPartnerId: Record<string, { label: string; slug: string }> = {
-  "profit-co": { label: "Objective and Key Result Areas (OKR)", slug: "okr" },
+ 
   resecurity: { label: "Cyber Security", slug: "cyber-security" },
   hostbooks: { label: "HostBooks ERP", slug: "hostbooks-erp" },
 };

@@ -39,8 +39,8 @@ export function Navbar() {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-white/10 bg-midnight/90 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.6)] backdrop-blur-xl"
-          : "border-b border-white/5 bg-midnight/70 backdrop-blur-md"
+  ? "border-b border-white/10 bg-midnight/95 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.45)] backdrop-blur-xl"
+  : "border-b border-white/10 bg-midnight/90 backdrop-blur-md"
       }`}
     >
       <div className="container-content flex h-[4.5rem] items-center justify-between gap-6 xl:h-20">

@@ -8,54 +8,54 @@ export default {
     },
     extend: {
       colors: {
-        // Design tokens — "AI-native enterprise technology company with
-        // deep SAP DNA" palette from the homepage brief (website.docx,
-        // "Design language"): midnight / near-black backgrounds, electric
-        // blue primary, cyan -> violet AI accent, off-white light sections.
-        // The token NAMES are unchanged from the earlier navy/teal palette so
-        // every existing page inherits the new look without a rewrite.
-        primary: {
-          DEFAULT: "#1D5BFF", // electric blue
-          dark: "#1245D6",
-          light: "#5B8CFF",
-        },
-        secondary: {
-          DEFAULT: "#0891B2", // cyan (AI accent, start of gradient)
-          dark: "#0E7490",
-          light: "#67E8F9",
-        },
-        violet: {
-          DEFAULT: "#7C5CFF", // AI accent (end of gradient)
-          light: "#A594FF",
-          dark: "#5B3FD6",
-        },
-        midnight: {
-          DEFAULT: "#050B1F",
-          950: "#030712",
-          900: "#050B1F",
-          800: "#0A1330",
-          700: "#101C42",
-          600: "#17275A",
-        },
-        accent: {
-          DEFAULT: "#F5A623",
-          dark: "#A05F07",
-          light: "#FBC96B",
-        },
-        background: "#F7F8FA", // off-white rather than pure white
-        surface: "#FFFFFF",
-        "surface-muted": "#EEF1F6",
-        "text-primary": "#0B1226",
-        "text-secondary": "#4B5670",
-        border: "#E2E8F0",
-        // legacy alias kept so earlier Phase 1 components referencing
-        // brand.* keep working without a rewrite
-        brand: {
-          navy: "#050B1F",
-          blue: "#1D5BFF",
-          accent: "#F5A623",
-        },
-      },
+  primary: {
+    DEFAULT: "#155EEF",
+    dark: "#0F4CC9",
+    light: "#4F8BFF",
+  },
+
+  secondary: {
+    DEFAULT: "#00A8D6",
+    dark: "#087EA4",
+    light: "#67DDF5",
+  },
+
+  violet: {
+    DEFAULT: "#7357FF",
+    light: "#9B88FF",
+    dark: "#5739D6",
+  },
+
+  midnight: {
+    DEFAULT: "#07111F",
+    950: "#030811",
+    900: "#07111F",
+    800: "#0B1829",
+    700: "#11243A",
+    600: "#17324E",
+  },
+
+  background: "#F7FAFC",
+  surface: "#FFFFFF",
+  "surface-muted": "#EEF3F8",
+
+  "text-primary": "#0B1628",
+  "text-secondary": "#536276",
+
+  border: "#DCE4EC",
+
+  accent: {
+    DEFAULT: "#F5A623",
+    dark: "#A05F07",
+    light: "#FBC96B",
+  },
+
+  brand: {
+    navy: "#07111F",
+    blue: "#155EEF",
+    accent: "#F5A623",
+  },
+},
       fontFamily: {
         display: ["'Plus Jakarta Sans'", "system-ui", "sans-serif"],
         sans: ["Inter", "system-ui", "sans-serif"],

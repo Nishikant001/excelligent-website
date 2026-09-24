@@ -123,6 +123,7 @@ export interface IndustryContent {
   navLabel: string;
   title: string;
   contentPending: boolean; // true for all 10 industries today
+  image: string;
   seo?: SeoMetadata;
 }
 

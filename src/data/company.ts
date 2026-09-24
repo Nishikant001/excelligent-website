@@ -6,11 +6,11 @@ import type { CompanyInfo, ContactInfo } from "@/types/content";
 export const company: CompanyInfo = {
   name: "Excelligent Consulting Services",
   legalDescription:
-    "Excelligent Consulting Services is a Delhi-based IT company formed to break the myth that adoption of applications such as ERP, CRM, and HCM is a confusing, costly, and painful exercise.",
+    "Excelligent Consulting Services is a Delhi-based IT company formed to break the myth that adoption of applications such as ERP, CRM, and SAP SuccessFactors is a confusing, costly, and painful exercise.",
   founded: "2019",
   tagline: "Excelligent stands for adapting intelligent ways to derive excellent results.",
   aboutParagraphs: [
-    "Excelligent Consulting Services is an IT service company formed by industry veterans with a view to make the implementation journey of Enterprise Level Applications like ERP, HRMS, PMS, OKR, and CRM a rewarding experience for customers. Excelligent is also a partner to the class-leading OKR software from Profit.co. Most of Excelligent's customers are SAP ECC and S/4HANA customers who wish to use SAP ERP to its fullest potential.",
+    "Excelligent Consulting Services is an IT service company formed by industry veterans with a view to make the implementation journey of Enterprise Level Applications like ERP, HRMS, PMS, and CRM a rewarding experience for customers.  Most of Excelligent's customers are SAP ECC and S/4HANA customers who wish to use SAP ERP to its fullest potential.",
     "Excelligent started in 2019 and, in a short duration, managed to serve 50+ customers. This number is constantly growing, and so is the company. Excelligent has expanded from one delivery centre in Gurugram to another in Bhubaneswar to serve customers from the eastern states.",
   ],
   mission:

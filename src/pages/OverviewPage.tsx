@@ -38,7 +38,7 @@ const principleIcon: Record<string, LucideIcon> = {
 const whatWeDo = [
   {
     title: "Solutions",
-    description: "SAP S/4HANA, BTP, OKR, HCM, and Cyber Security.",
+    description: "SAP S/4HANA, BTP, SAP SuccessFactors, and Cyber Security.",
     href: ROUTES.solutions,
   },
   {

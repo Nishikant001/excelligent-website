@@ -26,7 +26,7 @@ export function ContactHero() {
             <h1 className="text-h1 text-white">Let's build what's next, together.</h1>
             <p className="mt-4 max-w-2xl text-base text-white/75 sm:text-lg">
               Reach out about SAP implementation, SAP AMS, SAP BTP, GROW or RISE with SAP,
-              OKR, HCM, cyber security, or any of our other solutions and services — our team
+            , SAP SuccessFactors, cyber security, or any of our other solutions and services — our team
               is ready to talk through your digital transformation needs.
             </p>
           </div>

@@ -49,8 +49,7 @@ export const navItems: NavItem[] = [
       {
         heading: "More solutions",
         links: [
-          solutionLink("okr", undefined, "Strategy execution with Profit.co"),
-          solutionLink("hcm"),
+          solutionLink("successfactors"),
           solutionLink("cyber-security"),
           solutionLink("hostbooks-erp"),
           { label: "All solutions", href: ROUTES.solutions },

@@ -78,8 +78,11 @@ export const solutions: SolutionContent[] = [
       "SAP Business Technology Platform (SAP BTP) is an integrated offering from SAP that brings together database and data management, application development and integration, analytics, and intelligent technologies to help businesses innovate, integrate, and scale efficiently, supporting their digital transformation journey with a robust, flexible technology foundation.",
     featureBlocks: [
       { title: "Database and Data Management", description: "SAP HANA in-memory database, SAP Data Intelligence for data orchestration, and SAP Data Warehouse Cloud for unified data warehousing." },
-      { title: "Application Development and Integration", description: "SAP Extension Suite for building and extending applications, and SAP Integration Suite for connecting on-premise and cloud systems." },
-      { title: "Analytics", description: "SAP Analytics Cloud for BI, planning, and predictive analytics, plus a unified data access layer via SAP Data Warehouse Cloud." },
+{
+  title: "Application Developments",
+  description:
+    "Custom application development and extension using SAP BTP, SAP Extension Suite, APIs, cloud-native technologies, and integration services to build scalable enterprise applications."
+},      { title: "Analytics", description: "SAP Analytics Cloud for BI, planning, and predictive analytics, plus a unified data access layer via SAP Data Warehouse Cloud." },
       { title: "Intelligent Technologies", description: "SAP AI Core for machine learning and AI, and IoT connectivity for physical-asset data collection and analysis." },
       { title: "Business Services", description: "Pre-built business logic and integrations that facilitate faster development and deployment of applications." },
     ],
@@ -99,38 +102,12 @@ export const solutions: SolutionContent[] = [
     relatedIndustrySlugs: ["chemical"],
     relatedSolutionSlugs: ["grow-with-sap", "rise-with-sap"],
   },
+  
+ 
   {
-    slug: "okr",
-    navLabel: "Objective and Key Result Areas OKR",
-    title: "Objective and Key Result Areas (OKR)",
-    category: "People & Performance",
-    intro:
-      "OKR stands for Objectives and Key Results, a goal-setting framework used by organizations to define and track objectives and their outcomes. OKRs help companies align their goals so everyone works collaboratively towards the same objectives. The framework was popularized by John Doerr, who introduced it to Google during its early years. OKRs are typically set on a quarterly basis, encouraging regular check-ins, feedback, and adjustments.",
-    featureBlocks: [
-      { title: "OKR Management", description: "Strategic alignment, multiple key result areas, step-by-step OKR creation, inbuilt OKR templates, and real-time dashboards and notifications." },
-      { title: "Task Management", description: "Create and prioritize tasks, link tasks with OKRs, Kanban and list views, workflow management, and reports and dashboards." },
-      { title: "Employee Engagement", description: "Newsfeeds, mentions/comments/reactions, a reward system, an award dashboard, and pulse surveys." },
-      { title: "Performance Management", description: "HR dashboard, self-reviews and 1-on-1s with managers, 360-degree feedback, periodic reviews, and IDP/PIP." },
-    ],
-    caseStudy: {
-      id: "okr-partner-customer-stories",
-      title: "Customers from APAC and EMEA Regions",
-      summary: "Reflects our OKR technology partner Profit.co's own published customer stories, not an Excelligent-delivered engagement. See https://www.profit.co/customer-stories/",
-      relatedSlug: "okr",
-      clientNamed: false,
-      isThirdPartyContent: true,
-    },
-    seo: {
-      title: "OKR Solutions | Excelligent",
-      description: "Excelligent partners with Profit.co to bring Objective and Key Result (OKR) goal-setting, task management, and performance tracking to your organization.",
-      canonical: "https://excelligent.co.in/solutions/okr",
-    },
-    relatedSolutionSlugs: ["hcm"],
-  },
-  {
-    slug: "hcm",
-    navLabel: "Human Capital Management HCM",
-    title: "Human Capital Management (HCM)",
+    slug: "successfactors",
+navLabel: "SAP SuccessFactors",
+title: "SAP SuccessFactors",
     category: "People & Performance",
     intro:
       "End-to-end HR activities and improved contingent-workforce management via the People Choice human capital management platform — simplifying complex HR tasks for both the workforce and HR teams, including multi-country payroll, so they can focus on what matters most.",
@@ -151,7 +128,7 @@ export const solutions: SolutionContent[] = [
       description: "Excelligent's Human Capital Management solution covers core HR, leave and attendance, payroll, onboarding, and performance management in one platform.",
       canonical: "https://excelligent.co.in/solutions/hcm",
     },
-    relatedSolutionSlugs: ["okr"],
+    
   },
   {
     slug: "cyber-security",

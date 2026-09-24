@@ -5,31 +5,72 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    /* Phase 14 hardening: guard against any accidental horizontal page
-       overflow (e.g. a full-bleed section or animation nudging past the
-       viewport edge on a narrow screen). Inner horizontal-scroll
-       containers (industries showcase, trust marquee) opt in explicitly
-       via overflow-x-auto and are unaffected by this. */
     overflow-x: hidden;
   }
+
   body {
     @apply bg-background text-text-primary font-sans antialiased;
     overflow-x: hidden;
   }
-  h1, h2, h3, h4 {
+
+  h1,
+  h2,
+  h3,
+  h4 {
     @apply font-display text-text-primary;
   }
+
   a {
     @apply transition-colors duration-200;
   }
+
   :focus-visible {
-    outline: 2px solid theme('colors.primary.DEFAULT');
+    outline: 2px solid theme("colors.primary.DEFAULT");
     outline-offset: 2px;
     border-radius: 2px;
   }
 }
 
 @layer utilities {
+  .section-light {
+    @apply bg-background text-text-primary;
+  }
+
+  .section-white {
+    @apply bg-surface text-text-primary;
+  }
+
+  .section-muted {
+    @apply bg-surface-muted text-text-primary;
+  }
+
+  .section-dark {
+    @apply bg-midnight text-white;
+  }
+
+  .section-dark-soft {
+    @apply bg-midnight-800 text-white;
+  }
+
+  .section-dark-deep {
+    @apply bg-midnight-950 text-white;
+  }
+
+  .dark-heading {
+    @apply text-white;
+  }
+
+  .dark-description {
+    @apply text-white/70;
+  }
+
+  .light-heading {
+    @apply text-text-primary;
+  }
+
+  .light-description {
+    @apply text-text-secondary;
+  }
   .container-content {
     @apply mx-auto max-w-content px-5 sm:px-8 lg:px-12;
   }

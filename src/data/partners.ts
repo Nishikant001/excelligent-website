@@ -7,13 +7,7 @@ export const partners: Partner[] = [
     description: "Open Ecosystem",
     logo: "/partners/partner-3.jpg",
   },
-  {
-    id: "profit-co",
-    name: "Profit.co",
-    description:
-      "OKR software that helps you execute your strategy faster.",
-    logo: "/partners/partner-4.png",
-  },
+  
   {
     id: "resecurity",
     name: "Resecurity",

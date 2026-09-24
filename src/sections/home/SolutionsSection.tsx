@@ -33,7 +33,7 @@ export function SolutionsSection() {
             <SectionHeader
               eyebrow="Our Solutions"
               title="Solutions for a changing world"
-              description="From SAP S/4HANA to OKR, HCM, and cyber security — our integrated solutions help you stay ahead in a rapidly evolving business landscape."
+              description="From SAP S/4HANA to  SAP SuccessFactors, and cyber security — our integrated solutions help you stay ahead in a rapidly evolving business landscape."
               cta={{ label: "View All Solutions", href: ROUTES.solutions }}
             />
           </div>

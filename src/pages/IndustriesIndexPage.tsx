@@ -53,16 +53,17 @@ export default function IndustriesIndexPage() {
           viewport={viewportOnce}
           className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
         >
-          {industries.map((i) => (
-            <motion.div key={i.slug} variants={fadeUp}>
-              <IndustryCard
-                industry={{
-                  ...i,
-                  contentPending: !industriesWithConnections.has(i.slug),
-                }}
-              />
-            </motion.div>
-          ))}
+        {industries.map((i, index) => (
+  <motion.div key={i.slug} variants={fadeUp}>
+    <IndustryCard
+      index={index}
+      industry={{
+        ...i,
+        contentPending: !industriesWithConnections.has(i.slug),
+      }}
+    />
+  </motion.div>
+))}
         </motion.div>
       </section>
 

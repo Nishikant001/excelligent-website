@@ -247,11 +247,13 @@ export const evidence = {
   eyebrow: "Evidence",
   headline: "Experience that delivers.",
   stats: [
-    { value: 50, suffix: "+", label: "Customers", verified: true },
-    { value: 30, suffix: "+", label: "ERP Professionals", verified: false },
-    { value: 6, suffix: "+", label: "Industries", verified: false },
-    { value: 2, suffix: "", label: "Delivery Locations", verified: true },
+    { value: "50", suffix: "+", label: "Project by Team", verified: true },
+    { value: "5", suffix: "k+", label: "SAP AMS Users", verified: false },
+    { value: "75", suffix: "+", label: "talented Pool of Consultants", verified: false },
+    { value: "100", suffix: "k+", label: "Custom Development", verified: true },
   ],
+
+
   mission: { value: "1", label: "Mission", statement: "Make enterprise technology simpler." },
 };
 

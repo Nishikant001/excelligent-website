@@ -71,6 +71,17 @@ export const brandsServed: BrandServed[] = [
   { name: "Willowood", logo: "/customers/willowood.png" },
   { name: "Safex", logo: "/customers/safex.avif" },
   { name: "Konark", logo: "/customers/konark.png" },
+  { name: "Golyan", logo: "/customers/golyan.png" },
+  { name: "Minimalist", logo: "/customers/mini.jpg" },
+  { name: "VLCC", logo: "/customers/vlcc.png" },
+  { name: "Jashn FOODS", logo: "/customers/jshon.jpg" },
+  { name: "MYND..", logo: "/customers/mynd.png" },
+  { name: "CELLPACK Electricals Products", logo: "/customers/cellpack.png" },
+  { name: "KLJ", logo: "/customers/klj.webp" },
+  { name: "DDEV", logo: "/customers/ddev.svg" },
+  { name: "SAATVIK FREEN ENERGY", logo: "/customers/green.jpg" },
+  { name: "ROCKMAN", logo: "/customers/rockman.jpg" },
+  { name: "Force Motors", logo: "/customers/force.png" },
 ];
 
 // The "Your digital transformation partner" intro strip on the live Home

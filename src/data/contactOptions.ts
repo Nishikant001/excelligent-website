@@ -5,7 +5,7 @@ import { services } from "@/data/services";
 // in solutions.ts / services.ts — nothing here is invented. "Other" is the
 // only addition, as a catch-all for enquiries that don't map to a listed
 // offering.
-const solutionSlugsForContact = ["grow-with-sap", "rise-with-sap", "sap-btp", "okr", "hcm", "cyber-security", "hostbooks-erp"];
+const solutionSlugsForContact = ["grow-with-sap", "rise-with-sap", "sap-btp", "okr", "successfactors", "cyber-security", "hostbooks-erp"];
 const serviceSlugsForContact = [
   "sap-implementation",
   "sap-ams",

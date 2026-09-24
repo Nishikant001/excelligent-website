@@ -41,13 +41,13 @@ export const pageSeo: Record<string, SeoMetadata> = {
   ourPartnerships: {
     title: "Our Partnerships | Excelligent",
     description:
-      "Excelligent partners with Profit.co, Resecurity, and HostBooks to extend our SAP consulting practice into OKR, cyber security, and ERP.",
+      "Excelligent partners with Profit.co, Resecurity, and HostBooks to extend our SAP consulting practice into  cyber security, and ERP.",
     canonical: `${BASE}/our-partnerships`,
   },
   solutionsIndex: {
     title: "Solutions | Excelligent",
     description:
-      "Explore Excelligent's enterprise solutions: GROW and RISE with SAP, SAP BTP, OKR, HCM, cyber security, and HostBooks ERP.",
+      "Explore Excelligent's enterprise solutions: GROW and RISE with SAP, SAP BTP, SAP SuccessFactors  , cyber security, and HostBooks ERP.",
     canonical: `${BASE}/solutions`,
   },
   servicesIndex: {
@@ -77,7 +77,7 @@ export const pageSeo: Record<string, SeoMetadata> = {
   contact: {
     title: "Contact Excelligent | SAP & Digital Transformation Consulting",
     description:
-      "Get in touch with Excelligent about SAP implementation, SAP AMS, SAP BTP, GROW or RISE with SAP, OKR, HCM, cyber security, and our other solutions.",
+      "Get in touch with Excelligent about SAP implementation, SAP AMS, SAP BTP, GROW or RISE with SAP, SAP SuccessFactors, cyber security, and our other solutions.",
     canonical: `${BASE}/contact`,
   },
   blog: {
