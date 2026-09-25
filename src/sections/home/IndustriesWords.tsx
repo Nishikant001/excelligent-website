@@ -21,7 +21,7 @@ export default function IndustriesWords() {
             {industriesSection.eyebrow}
           </p>
 
-          <h2 className="text-3xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+          <h2 className="text-3xl text-statement max-w-3xl leading-tight tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
             {industriesSection.headline}
           </h2>
         </div>

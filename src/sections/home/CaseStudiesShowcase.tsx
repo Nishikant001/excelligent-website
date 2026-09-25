@@ -11,7 +11,7 @@ import { caseStudiesSection } from "@/data/homeSections";
 // generating leads." Large photographic cards (no client logos, since customer
 // names are withheld), each with an industry tag, engagement title, three short
 // lines and a "View Case Study →" link.
-export function CaseStudiesShowcase() {
+export function CaseStudiesShowcase() { 
   return (
     <section className="relative isolate overflow-hidden bg-midnight py-24 lg:py-36" aria-labelledby="case-studies-heading">
       <div className="absolute inset-0 bg-navy-mesh opacity-70" aria-hidden="true" />
