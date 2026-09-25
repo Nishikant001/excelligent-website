@@ -1,95 +1,139 @@
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import { ArrowUpRight } from "lucide-react";
 
-import { fadeUp, viewportOnce } from "@/lib/animations";
-import { Button } from "@/components/Button";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { industriesSection } from "@/data/homeSections";
 
-// Section 10 of the brief — "Industries: use large scrolling words rather than
-// eight little icons." Hovering (or focusing / tapping) a word reveals the
-// business processes we work on in that industry, which "demonstrates actual
-// industry understanding".
-export function IndustriesWords() {
-  const [active, setActive] = useState<string | null>(null);
+export default function IndustriesWords() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const industries = industriesSection.words;
+  const activeIndustry = industries[activeIndex];
+
+  if (!activeIndustry) return null;
 
   return (
-    <section className="bg-background py-24 lg:py-36" aria-labelledby="industries-heading">
-      <div className="container-content">
-        <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
-          <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={viewportOnce} className="max-w-3xl">
-            <p className="eyebrow mb-5">{industriesSection.eyebrow}</p>
-            <h2 id="industries-heading" className="text-statement text-text-primary">
-              {industriesSection.headline}
-            </h2>
-          </motion.div>
-          <Button as="a" href={industriesSection.viewAll.href} variant="text" withArrow className="group shrink-0 text-base font-semibold">
-            {industriesSection.viewAll.label}
-          </Button>
+    <section className="bg-white py-16 md:py-24">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+        {/* Section Header */}
+        <div className="mb-10 max-w-3xl">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
+            {industriesSection.eyebrow}
+          </p>
+
+          <h2 className="text-3xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+            {industriesSection.headline}
+          </h2>
         </div>
 
-        <ul className="mt-14 border-t border-border lg:mt-20">
-          {industriesSection.words.map((item) => {
-            const isActive = active === item.word;
-            return (
-              <li
-                key={item.word}
-                className="border-b border-border"
-                onMouseEnter={() => setActive(item.word)}
-                onMouseLeave={() => setActive((a) => (a === item.word ? null : a))}
-              >
-                <Link
-                  to={item.href}
-                  onFocus={() => setActive(item.word)}
-                  onBlur={() => setActive((a) => (a === item.word ? null : a))}
-                  onClick={(e) => {
-                    // On touch screens the first tap reveals the processes; a
-                    // second tap follows the link.
-                    if (window.matchMedia("(hover: none)").matches && !isActive) {
-                      e.preventDefault();
-                      setActive(item.word);
-                    }
-                  }}
-                  className="group flex items-center justify-between gap-6 py-4 lg:py-6"
+        {/* Split Layout */}
+        <div className="grid grid-cols-1 gap-10 border-t border-slate-200 pt-8 lg:grid-cols-2 lg:gap-16">
+          {/* Left: Industry List */}
+          <div>
+            {industries.map((industry, index) => {
+              const isActive = activeIndex === index;
+
+              return (
+                <button
+                  key={industry.word}
+                  type="button"
+                  onClick={() => setActiveIndex(index)}
+                  onMouseEnter={() => setActiveIndex(index)}
+                  className={`group flex w-full items-center gap-4 border-b border-slate-200 py-4 text-left transition-colors duration-200 ${
+                    isActive
+                      ? "text-blue-600"
+                      : "text-slate-600 hover:text-slate-900"
+                  }`}
+                  aria-pressed={isActive}
                 >
+                  <span className="w-7 shrink-0 text-xs text-slate-400">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
                   <span
-                    className={`font-display text-giant uppercase transition-all duration-500 ease-premium ${
-                      isActive
-                        ? "text-gradient-ai translate-x-2 sm:translate-x-4"
-                        : "text-outline [--outline-color:rgba(11,18,38,0.3)]"
+                    className={`flex-1 text-base font-medium transition-all duration-200 sm:text-lg ${
+                      isActive ? "translate-x-1" : ""
                     }`}
                   >
-                    {item.word}
+                    {industry.word}
                   </span>
-                  <ArrowUpRight
-                    className={`h-8 w-8 shrink-0 transition-all duration-300 lg:h-10 lg:w-10 ${
-                      isActive ? "-translate-y-1 translate-x-1 text-primary opacity-100" : "text-text-secondary/40 opacity-60"
-                    }`}
-                    aria-hidden="true"
-                  />
-                </Link>
 
-                <AnimatePresence initial={false}>
-                  {isActive && (
-                    <motion.div
-                      key="processes"
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                      className="overflow-hidden"
-                    >
-                      <p className="pb-6 text-base font-medium leading-relaxed text-text-secondary sm:text-lg lg:max-w-4xl">
-                        {item.processes.join(" · ")}
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </li>
-            );
-          })}
-        </ul>
+                  <ArrowRight
+                    size={18}
+                    className={`shrink-0 transition-all duration-200 ${
+                      isActive
+                        ? "translate-x-0 opacity-100"
+                        : "-translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100"
+                    }`}
+                  />
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Right: Selected Industry Details */}
+          <div className="flex flex-col justify-center bg-slate-50 p-6 sm:p-8 lg:p-10">
+            <div className="mb-6 flex items-center gap-3">
+              <span className="text-sm font-medium text-blue-600">
+                {String(activeIndex + 1).padStart(2, "0")}
+              </span>
+              <span className="h-px w-10 bg-blue-300" />
+              <span className="text-xs font-semibold uppercase tracking-[0.15em] text-slate-500">
+                Industry Overview
+              </span>
+            </div>
+
+            <h3 className="mb-4 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+              {activeIndustry.word}
+            </h3>
+
+            <p className="mb-8 max-w-lg text-sm leading-7 text-slate-600">
+              Explore our solutions and key business processes designed for the{" "}
+              {activeIndustry.word} industry.
+            </p>
+
+            <div className="mb-8">
+              <h4 className="mb-4 text-sm font-semibold text-slate-900">
+                Key Processes
+              </h4>
+
+              <div className="space-y-0">
+                {activeIndustry.processes.map((process, index) => (
+                  <div
+                    key={`${process}-${index}`}
+                    className="flex items-center gap-3 border-b border-slate-200 py-3 text-sm text-slate-600 last:border-b-0"
+                  >
+                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500" />
+                    {process}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <Link
+                to={activeIndustry.href}
+                className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 transition-colors hover:text-blue-800"
+              >
+                Explore Industry
+                <ArrowUpRight size={17} />
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* View All */}
+        {industriesSection.viewAll && (
+          <div className="mt-8 flex justify-end">
+            <Link
+              to={industriesSection.viewAll.href}
+              className="inline-flex items-center gap-2 text-sm font-semibold text-slate-700 hover:text-blue-600"
+            >
+              {industriesSection.viewAll.label}
+              <ArrowRight size={16} />
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

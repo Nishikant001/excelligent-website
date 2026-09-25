@@ -40,49 +40,78 @@ function ScrollWord({
   );
 
   return (
-    <li className="flex flex-col gap-2 border-b border-border py-5 sm:flex-row sm:items-center sm:justify-between sm:gap-8 lg:py-7">
-      <div className="relative font-display text-giant uppercase">
-        <span className="text-outline block [--outline-color:rgba(11,18,38,0.28)]" aria-hidden="true">
-          {label}
-        </span>
-        {/* The real, accessible text lives on the filled layer. */}
-        <motion.span
-          className="text-gradient-ai absolute inset-0 block"
-          style={reduce ? undefined : { clipPath: clip }}
-        >
-          {label}
-        </motion.span>
-      </div>
-      <motion.p
-        style={reduce ? undefined : { opacity: captionOpacity }}
-        className="shrink-0 text-sm font-medium uppercase tracking-[0.16em] text-text-secondary sm:w-44 sm:text-right"
-      >
-        {caption}
-      </motion.p>
-    </li>
+  <li className="flex flex-col gap-1 border-b border-border py-2.5 sm:flex-row sm:items-center sm:justify-between sm:gap-6 lg:py-3">
+  <div className="relative font-display text-[clamp(3.5rem,7vw,7.5rem)] leading-[0.82] uppercase">
+    <span
+      className="text-outline block [--outline-color:rgba(11,18,38,0.28)]"
+      aria-hidden="true"
+    >
+      {label}
+    </span>
+
+    {/* Accessible + animated filled text */}
+    <motion.span
+      className="text-gradient-ai absolute inset-0 block"
+      style={reduce ? undefined : { clipPath: clip }}
+    >
+      {label}
+    </motion.span>
+  </div>
+
+  <motion.p
+    style={reduce ? undefined : { opacity: captionOpacity }}
+    className="shrink-0 text-[10px] font-medium uppercase tracking-[0.16em] text-text-secondary sm:w-36 sm:text-right lg:text-xs"
+  >
+    {caption}
+  </motion.p>
+</li>
   );
 }
-
+ 
 export function PositioningSection() {
   const listRef = useRef<HTMLUListElement>(null);
   const reduce = useReducedMotion() ?? false;
-  const { scrollYProgress } = useScroll({ target: listRef, offset: ["start 78%", "end 62%"] });
+
+  const { scrollYProgress } = useScroll({
+    target: listRef,
+    offset: ["start 78%", "end 62%"],
+  });
 
   const accent = "Intelligent Enterprise.";
   const lead = positioning.headline.replace(accent, "");
 
   return (
-    <section className="bg-surface py-24 lg:py-40" aria-labelledby="positioning-heading">
+    <section
+      className="bg-surface py-12 lg:py-16"
+      aria-labelledby="positioning-heading"
+    >
       <div className="container-content">
-        <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={viewportOnce} className="max-w-5xl">
-          <h2 id="positioning-heading" className="text-statement text-text-primary">
+
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={viewportOnce}
+          className="max-w-5xl"
+        >
+          <h2
+            id="positioning-heading"
+            className="text-statement text-text-primary"
+          >
             {lead}
             <span className="text-gradient-ai">{accent}</span>
           </h2>
-          <p className="mt-8 max-w-3xl text-lg leading-relaxed text-text-secondary lg:text-xl">{positioning.body}</p>
+
+          <p className="mt-5 max-w-3xl text-lg leading-relaxed text-text-secondary lg:text-xl">
+            {positioning.body}
+          </p>
         </motion.div>
 
-        <ul ref={listRef} className="mt-16 border-t border-border lg:mt-24" aria-label="How we help">
+        <ul
+          ref={listRef}
+          className="mt-10 border-t border-border lg:mt-14"
+          aria-label="How we help"
+        >
           {positioning.words.map((w, i) => (
             <ScrollWord
               key={w.word}
@@ -96,6 +125,7 @@ export function PositioningSection() {
             />
           ))}
         </ul>
+
       </div>
     </section>
   );

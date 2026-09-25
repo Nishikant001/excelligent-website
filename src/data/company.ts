@@ -46,8 +46,7 @@ export const contact: ContactInfo = {
       label: "Bhubaneswar",
       addressLines: [
   "Room No-441, 4th Floor, Nexus Esplanade (Office Block)",
-  "Puri - Cuttack Road, Rasulgarh Industrial Estate, Rasulgarh",
-  "Bhubaneswar, Khordha, Odisha, 751010",
+  "Bhubaneswar, Odisha, 751010",
 ]
 
     },

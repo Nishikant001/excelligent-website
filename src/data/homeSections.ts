@@ -247,10 +247,10 @@ export const evidence = {
   eyebrow: "Evidence",
   headline: "Experience that delivers.",
   stats: [
-    { value: "50", suffix: "+", label: "Project by Team", verified: true },
     { value: "5", suffix: "k+", label: "SAP AMS Users", verified: false },
-    { value: "75", suffix: "+", label: "talented Pool of Consultants", verified: false },
-    { value: "100", suffix: "k+", label: "Custom Development", verified: true },
+    { value: "50", suffix: "+", label: "Project by Team", verified: true },
+    { value: "75", suffix: "+", label: "talented Consultants", verified: false },
+    { value: "100", suffix: "+", label: "Custom Development", verified: true },
   ],
 
 
@@ -316,47 +316,130 @@ export interface IndustryWord {
 export const industriesSection = {
   eyebrow: "Industries",
   headline: "We speak your industry's language.",
-  viewAll: { label: "Explore all industries", href: ROUTES.industries },
+  viewAll: {
+    label: "Explore all industries",
+    href: ROUTES.industries,
+  },
+
   words: [
     {
+      word: "Food & Beverage",
+      processes: [
+        "Procure-to-Pay",
+        "Production",
+        "Distribution",
+        "Dealer Management",
+        "Finance",
+      ],
+      href: ROUTES.industries,
+    },
+
+    {
       word: "Automotive",
-      processes: ["Procure-to-Pay", "Production Planning", "Quality", "Plant Maintenance", "Dispatch", "Fixed Assets", "Finance"],
+      processes: [
+        "Procure-to-Pay",
+        "Production Planning",
+        "Quality",
+        "Plant Maintenance",
+        "Dispatch",
+        "Fixed Assets",
+        "Finance",
+      ],
       href: ROUTES.industry("automotive"),
     },
+
     {
-      word: "Manufacturing",
-      processes: ["Procure-to-Pay", "Production", "Quality", "Plant Maintenance", "Inventory", "Finance"],
-      href: ROUTES.industries,
-    },
-    {
-      word: "Cement",
-      processes: ["Procure-to-Pay", "Plant Maintenance", "Production", "Quality", "Dispatch", "Dealer Management", "Finance"],
-      href: ROUTES.industries,
-    },
-    {
-      word: "Consumer Products",
-      processes: ["Order-to-Cash", "Distributor & Dealer Management", "Inventory", "Pricing", "Finance"],
+      word: "FMCG",
+      processes: [
+        "Order-to-Cash",
+        "Distributor & Dealer Management",
+        "Inventory",
+        "Pricing",
+        "Supply Chain",
+        "Finance",
+      ],
       href: ROUTES.industry("consumer-goods"),
     },
+
     {
-      word: "Pharma",
-      processes: ["Procure-to-Pay", "Batch & Quality", "Supply Chain", "Document Control", "Distribution", "Finance"],
-      href: ROUTES.industry("pharma"),
+      word: "Agri Chemical",
+      processes: [
+        "Procure-to-Pay",
+        "Batch Management",
+        "Quality",
+        "Production",
+        "Inventory",
+        "Distribution",
+        "Finance",
+      ],
+      href: ROUTES.industry("agri-chemical"),
     },
-    {
-      word: "Food & Beverage",
-      processes: ["Procure-to-Pay", "Production", "Distribution", "Dealer Management", "Finance"],
-      href: ROUTES.industries,
-    },
+
     {
       word: "Logistics",
-      processes: ["Transportation", "Warehousing", "Order Fulfilment", "Billing", "Finance"],
+      processes: [
+        "Transportation",
+        "Warehousing",
+        "Order Fulfilment",
+        "Fleet Management",
+        "Billing",
+        "Finance",
+      ],
       href: ROUTES.industry("logistics"),
     },
+
     {
-      word: "Engineering",
-      processes: ["Project Systems", "Procure-to-Pay", "Plant Maintenance", "Sales", "Finance"],
+      word: "Brewery",
+      processes: [
+        "Procure-to-Pay",
+        "Production",
+        "Batch Management",
+        "Quality",
+        "Inventory",
+        "Distribution",
+        "Finance",
+      ],
+      href: ROUTES.industry("brewery"),
+    },
+
+    {
+      word: "Pharma",
+      processes: [
+        "Procure-to-Pay",
+        "Batch & Quality",
+        "Supply Chain",
+        "Document Control",
+        "Distribution",
+        "Finance",
+      ],
+      href: ROUTES.industry("pharma"),
+    },
+
+    {
+      word: "EC&O",
+      processes: [
+        "Project Systems",
+        "Procure-to-Pay",
+        "Plant Maintenance",
+        "Sales",
+        "Project Management",
+        "Finance",
+      ],
       href: ROUTES.industry("engineering-construction"),
+    },
+
+    {
+      word: "Retail",
+      processes: [
+        "Procure-to-Pay",
+        "Inventory",
+        "Pricing",
+        "Sales",
+        "Distribution",
+        "Customer Management",
+        "Finance",
+      ],
+      href: ROUTES.industry("retail"),
     },
   ] as IndustryWord[],
 };
@@ -405,6 +488,6 @@ export const insights = {
 export const finalCta = {
   kicker: "Have a transformation in mind?",
   headline: "Let's build what's next.",
-  strap: "SAP. AI. Cloud. Enterprise Applications.",
+  strap: "We bring together deep SAP expertise, AI, cloud and enterprise engineering to build  intelligent, future ready business.",
   cta: { label: "Talk to Excelligent", href: ROUTES.contact },
 };

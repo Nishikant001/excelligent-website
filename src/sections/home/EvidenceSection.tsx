@@ -44,21 +44,7 @@ export function EvidenceSection() {
           })}
         </motion.dl>
 
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={viewportOnce}
-          className="mt-16 flex flex-col gap-4 border-t border-border pt-10 sm:flex-row sm:items-baseline sm:gap-10 lg:mt-24"
-        >
-          <p className="font-display text-giant leading-none text-gradient-ai">50K</p>
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-text-secondary">{evidence.mission.label}</p>
-            <p className="mt-2 font-display text-2xl font-bold text-text-primary sm:text-3xl lg:text-4xl">
-              {evidence.mission.statement}
-            </p>
-          </div>
-        </motion.div>
+        
       </div>
     </section>
   );

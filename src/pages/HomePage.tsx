@@ -10,7 +10,7 @@ import { CloudSection } from "@/sections/home/CloudSection";
 import { ProductsShowcase } from "@/sections/home/ProductsShowcase";
 import { EvidenceSection } from "@/sections/home/EvidenceSection";
 import { CaseStudiesShowcase } from "@/sections/home/CaseStudiesShowcase";
-import { IndustriesWords } from "@/sections/home/IndustriesWords";
+import  IndustriesWords  from "@/sections/home/IndustriesWords";
 import { WhySection } from "@/sections/home/WhySection";
 import { FootprintSection } from "@/sections/home/FootprintSection";
 import { InsightsSection } from "@/sections/home/InsightsSection";

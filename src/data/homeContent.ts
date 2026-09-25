@@ -78,10 +78,8 @@ export const brandsServed: BrandServed[] = [
   { name: "MYND..", logo: "/customers/mynd.png" },
   { name: "CELLPACK Electricals Products", logo: "/customers/cellpack.png" },
   { name: "KLJ", logo: "/customers/klj.webp" },
-  { name: "DDEV", logo: "/customers/ddev.svg" },
-  { name: "SAATVIK FREEN ENERGY", logo: "/customers/green.jpg" },
-  { name: "ROCKMAN", logo: "/customers/rockman.jpg" },
-  { name: "Force Motors", logo: "/customers/force.png" },
+
+  
 ];
 
 // The "Your digital transformation partner" intro strip on the live Home
