@@ -247,9 +247,9 @@ export const evidence = {
   eyebrow: "Evidence",
   headline: "Experience that delivers.",
   stats: [
-    { value: "5", suffix: "k+", label: "SAP AMS Users", verified: false },
-    { value: "50", suffix: "+", label: "Project by Team", verified: true },
-    { value: "75", suffix: "+", label: "talented Consultants", verified: false },
+    { value: "5000", suffix: "+", label: "SAP Users Supported", verified: true },
+    { value: "50", suffix: "+", label: "Projects Delivered", verified: true },
+    { value: "75", suffix: "+", label: "SAP Consultants", verified: true },
     { value: "100", suffix: "+", label: "Custom Development", verified: true },
   ],
 

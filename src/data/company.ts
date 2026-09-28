@@ -6,7 +6,7 @@ import type { CompanyInfo, ContactInfo } from "@/types/content";
 export const company: CompanyInfo = {
   name: "Excelligent Consulting Services",
   legalDescription:
-    "Excelligent Consulting Services is a Delhi-based IT company formed to break the myth that adoption of applications such as ERP, CRM, and SAP SuccessFactors is a confusing, costly, and painful exercise.",
+    "We bring together deep SAP expertise, AI, cloud and enterprise engineering to build intelligent, future-ready businesses.",
   founded: "2019",
   tagline: "Excelligent stands for adapting intelligent ways to derive excellent results.",
   aboutParagraphs: [

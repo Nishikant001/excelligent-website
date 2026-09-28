@@ -58,7 +58,7 @@ export const services: ServiceContent[] = [
     ],
     caseStudy: {
       id: "sap-ams-distillery",
-      title: "SAP AMS Services for a Distillery Company",
+      title: "SAP AMS Services for Multiple Companies ",
       summary: "Our customer is a well-known alcoholic beverage brand in Northern India. Excelligent managed their AMS immediately after go-live on RISE with SAP S/4HANA Private Cloud and helped stabilize all operations on SAP.",
       relatedSlug: "sap-ams",
       clientNamed: false,
@@ -135,13 +135,13 @@ export const services: ServiceContent[] = [
       { title: "Augmented Analytics", description: "Natural-language querying, smart discovery of key influencers and relationships, and smart data-transformation recommendations." },
       { title: "Collaboration", description: "In-context commenting, sharing of dashboards and insights, and version control for planning data and models." },
     ],
-    caseStudy: {
-      id: "cloud-analytics-automotive",
-      title: "SAP Analytics for an Automotive Company",
-      summary: "We were engaged with a well-known automotive company to correct and enhance an existing SAP Analytics deployment alongside their SAP ECC system.",
-      relatedSlug: "sap-cloud-analytics",
-      clientNamed: false,
-    },
+    caseStudy:{
+  "id": "sap-s4hana-indian-taxation-automotive",
+  "title": "SAP S/4HANA Indian Taxation Implementation for a Leading Global Automotive Manufacturer",
+  "summary": "We were engaged with a leading global automotive manufacturer to implement and configure Indian taxation requirements within their SAP S/4HANA environment, ensuring full regulatory compliance.",
+  "relatedSlug": "automotive",
+  "clientNamed": false
+},
     seo: {
       title: "SAP Cloud Analytics | Excelligent",
       description: "Excelligent implements and optimizes SAP Analytics Cloud, combining business intelligence, planning, and predictive analytics for better decisions.",

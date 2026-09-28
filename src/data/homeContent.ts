@@ -62,11 +62,11 @@ export interface BrandServed {
 
 export const brandsServed: BrandServed[] = [
   { name: "KIA Motors", logo: "/customers/kia-motors.webp" },
-  { name: "Napino Auto", logo: "/customers/napino-auto.png" },
+  { name: "Napino Auto", logo: "/customers/napino-auto.jpg" },
   { name: "Oasis Group", logo: "/customers/oasis-group.png" },
-  { name: "BBC Cellpack", logo: "/customers/bbc-cellpack.jpg" },
-  { name: "Hyundai Kefico", logo: "/customers/hyundai-kefico.png" },
-  { name: "Psychotropic", logo: "/customers/psychotropic.svg" },
+  { name: "BBC Cellpack", logo: "/customers/cellpack.webp" },
+  { name: "Hyundai Kefico", logo: "/customers/hk.png" },
+  { name: "Psychotropic", logo: "/customers/psyco.jpg" },
   { name: "Supreme Agro", logo: "/customers/supreme-agro.jpg" },
   { name: "Willowood", logo: "/customers/willowood.png" },
   { name: "Safex", logo: "/customers/safex.avif" },
