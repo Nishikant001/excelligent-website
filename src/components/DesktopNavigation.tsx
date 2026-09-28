@@ -36,7 +36,7 @@ export function DesktopNavigation() {
   }, [openLabel]);
 
   return (
-    <nav ref={navRef} className="hidden items-center gap-0.5 xl:flex" aria-label="Primary">
+    <nav ref={navRef} className="hidden items-center gap-0.5 font-sans xl:flex" aria-label="Primary">
       {navItems.map((item) => {
         const hasMenu = Boolean(item.columns);
         const isOpen = openLabel === item.label;

@@ -71,10 +71,10 @@ export function AskExcelligentAI() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 16, scale: 0.97 }}
             transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
-            className="mb-3 flex h-[min(34rem,calc(100svh-7rem))] w-[min(24rem,calc(100vw-2rem))] flex-col overflow-hidden rounded-3xl border border-white/10 bg-midnight-800 text-white shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)]"
+            className="mb-3 flex h-[min(34rem,calc(100svh-7rem))] w-[min(24rem,calc(100vw-2rem))] flex-col overflow-hidden rounded-3xl border border-white/10 bg-midnight-800 font-sans text-white shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)]"
           >
             <div className="flex items-center justify-between border-b border-white/10 bg-gradient-to-r from-primary/30 to-violet/30 px-5 py-4">
-              <p className="flex items-center gap-2 font-display text-base font-bold">
+              <p className="flex items-center gap-2 font-sans text-base font-bold">
                 <Sparkles className="h-4 w-4 text-secondary-light" aria-hidden="true" /> Ask Excelligent AI
               </p>
               <div className="flex items-center gap-1">
@@ -184,7 +184,7 @@ export function AskExcelligentAI() {
         type="button"
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
-        className="ml-auto flex items-center gap-2 rounded-full bg-gradient-to-r from-primary to-violet px-5 py-3.5 text-sm font-semibold text-white shadow-[0_12px_40px_-10px_rgba(124,92,255,0.8)] transition-transform duration-200 hover:-translate-y-0.5"
+        className="ml-auto flex items-center font-sans gap-2 rounded-full bg-gradient-to-r from-primary to-violet px-5 py-3.5 text-sm font-semibold text-white shadow-[0_12px_40px_-10px_rgba(124,92,255,0.8)] transition-transform duration-200 hover:-translate-y-0.5"
       >
         <Sparkles className="h-4 w-4" aria-hidden="true" />
         Ask Excelligent AI

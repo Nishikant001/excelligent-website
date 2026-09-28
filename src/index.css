@@ -7,6 +7,12 @@
     scroll-behavior: smooth;
     overflow-x: hidden;
   }
+   button,
+  input,
+  textarea,
+  select {
+    font-family: inherit;
+  }
 
   body {
     /* UPDATED GLOBAL BODY: Forces your entire site's body paragraphs/labels to automatically use Plus Jakarta Sans */

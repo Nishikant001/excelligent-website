@@ -25,11 +25,9 @@ export default {
          CHANGES MADE HERE: Applied font overrides universally across body and titles
          ========================================================================== */
       fontFamily: {
-        // GLOBAL HEADINGS OVERRIDE: Swaps all site-wide titles to the premium Serif look
-        display: ["'Playfair Display'", "Georgia", "serif"],
-        // GLOBAL BODY OVERRIDE: Swaps your entire site-wide body paragraphs/labels to Plus Jakarta Sans
-        sans: ["'Plus Jakarta Sans'", "system-ui", "sans-serif"],
-      },
+  display: ["'Playfair Display'", "Georgia", "serif"],
+  sans: ["'Playfair Display'", "Georgia", "serif"],
+},
       /* ========================================================================== */
       fontSize: {
         // Removed aggressive tracking weights so the serif fonts load gracefully, with clamp tracking set to match Artery's size profile
