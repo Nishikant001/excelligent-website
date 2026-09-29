@@ -59,7 +59,7 @@ export const services: ServiceContent[] = [
     caseStudy: {
       id: "sap-ams-distillery",
       title: "SAP AMS Services for Multiple Companies ",
-      summary: "Our customer is a well-known alcoholic beverage brand in Northern India. Excelligent managed their AMS immediately after go-live on RISE with SAP S/4HANA Private Cloud and helped stabilize all operations on SAP.",
+      summary: "We Served customers from Infrastructure, Textile, FMCG, Agri Chemicals, Ethanol, Distillery , Automotive, Electronics, Herbal , Rice , Metal , Aviation, Cement ,Dairy , Pharma & Skin Care industries .",
       relatedSlug: "sap-ams",
       clientNamed: false,
     },

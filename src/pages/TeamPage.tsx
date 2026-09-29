@@ -37,7 +37,7 @@ export default function TeamPage() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % teamImages.length);
-    }, 4000); // Slides every 4 seconds
+    }, 2000); // Slides every 4 seconds
 
     return () => clearInterval(timer); // Cleanup interval on unmount
   }, []);
