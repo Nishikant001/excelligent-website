@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Linkedin, Mail, Star, Layers, Wrench, Boxes } from "lucide-react";
+import { ArrowUpRight,  Star, Layers, Wrench, Boxes } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { cardHover } from "@/lib/animations";
 import type {
@@ -283,10 +283,16 @@ export function IndustryCard({
   );
 }
 
-export function TeamCard({ member }: { member: TeamMember }) {
+export function TeamCard({
+  member,
+  onViewProfile,
+}: {
+  member: TeamMember;
+  onViewProfile: (member: TeamMember) => void;
+}) {
   return (
-    <div className={cardBase}>
-      <div className="h-16 w-16 rounded-full bg-surface-muted flex items-center justify-center text-[11px] text-text-secondary mb-4 overflow-hidden">
+    <div className={`${cardBase} group`}>
+      <div className="mb-5 flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-surface-muted text-[11px] text-text-secondary ring-1 ring-border/60">
         {member.photo ? (
           <img
             src={member.photo}
@@ -299,30 +305,29 @@ export function TeamCard({ member }: { member: TeamMember }) {
           "Photo pending"
         )}
       </div>
+
       <h3 className="text-h3">{member.name}</h3>
-      <p className="text-sm text-primary font-medium mb-2">{member.title}</p>
-      <p className="text-sm text-text-secondary line-clamp-4">{member.bio}</p>
-      <div className="mt-4 flex gap-3">
-        {member.linkedin && (
-          <a
-            href={member.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`${member.name} on LinkedIn`}
-            className="text-text-secondary hover:text-primary"
+
+      <p className="mb-2 text-sm font-medium text-primary">
+        {member.title}
+      </p>
+
+      <p className="line-clamp-4 text-sm text-text-secondary">
+        {member.bio}
+      </p>
+
+      <div className="mt-auto pt-5">
+        <div className="border-t border-border/60 pt-4">
+          <button
+            type="button"
+            onClick={() => onViewProfile(member)}
+            className="group inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-primary transition-all duration-300"
           >
-            <Linkedin className="h-4 w-4" />
-          </a>
-        )}
-        {member.email && (
-          <a
-            href={`mailto:${member.email}`}
-            aria-label={`Email ${member.name}`}
-            className="text-text-secondary hover:text-primary"
-          >
-            <Mail className="h-4 w-4" />
-          </a>
-        )}
+            View Profile
+
+            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+          </button>
+        </div>
       </div>
     </div>
   );
